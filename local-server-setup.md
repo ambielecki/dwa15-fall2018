@@ -21,7 +21,7 @@ Download and install MAMP: <https://mamp.info/en/downloads>
 
 <small>Note: The download includes both free *MAMP* and *MAMP Pro* (paid version). You'll only need to use the free MAMP version in this class.</small>
 
-In **Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`.
+In **MAMP > Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`.
 
 <img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-pref-doc-root.png' style='max-width:499px;' alt=''>
 
