@@ -21,9 +21,9 @@ Download and install MAMP: <https://mamp.info/en/downloads>
 
 <small>Note: The download includes both free *MAMP* and *MAMP Pro* (paid version). You'll only need to use the free MAMP version in this class.</small>
 
-In **MAMP > Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`.
+In **MAMP > Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`, as shown here:
 
-<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-pref-doc-root.png' style='max-width:499px;' alt=''>
+<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-pref-doc-root@2x.png' style='max-width:499px;' alt=''>
 
 The Document Root is where the server &ldquo;points to&rdquo;, i.e. when you access your local site, it will serve files from this directory.
 
@@ -31,7 +31,7 @@ We'll eventually customize the document root as we start building individual app
 
 Also in Preferences, under **Ports** click *Set Apache & MySQL* ports to `80` & `3306`:
 
-<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-ports.png' style='max-width:269px;' alt=''>
+<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-ports@2x.png' style='max-width:269px;' alt=''>
 
 The default Apache port is 80, so setting it to this makes it so you can access your local sites via the url `http://localhost`. If your Apache port is something else, for example, 8888, you'd have to access your sites via `http://localhost:8888`.
 
