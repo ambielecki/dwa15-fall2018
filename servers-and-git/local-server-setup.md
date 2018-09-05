@@ -9,7 +9,7 @@ For example, in this course when we deploy our applications on a production serv
 + The __M__ stands for __MySQL__ - Open-source database server.
 + The __P__ stands for __PHP__ - Web scripting language.
 
-In order to run, debug, and test our applications, we want to mirror this stack on our own local machines, substituting Linux for whatever operating system we use.
+In order to run, debug, and test our applications, we want to mirror this stack on our own local machines, substituting Linux for whatever operating system we use.spring-2018
 
 We could individually download and install Apache, PHP and MySQL on our computers, but a simpler approach is to use a program that manages all three such as [MAMP](https://mamp.info) or [XAMPP](https://www.apachefriends.org/index.html).
 
@@ -21,9 +21,9 @@ Download and install MAMP: <https://mamp.info/en/downloads>
 
 <small>Note: The download includes both free *MAMP* and *MAMP Pro* (paid version). You'll only need to use the free MAMP version in this class.</small>
 
-In **Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`.
+In **MAMP > Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`, as shown here:
 
-<img src='https://s3.amazonaws.com/making-the-internet/vc-mamp-htdocs-document-root@2x.png' class='' style='max-width:603px; width:100%' alt=''>
+<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-pref-doc-root@2x.png' style='max-width:499px;' alt=''>
 
 The Document Root is where the server &ldquo;points to&rdquo;, i.e. when you access your local site, it will serve files from this directory.
 
@@ -31,7 +31,7 @@ We'll eventually customize the document root as we start building individual app
 
 Also in Preferences, under **Ports** click *Set Apache & MySQL* ports to `80` & `3306`:
 
-<img src='https://s3.amazonaws.com/making-the-internet/vc-mamp-ports@2x.png' style='width:100%; max-width:540px'>
+<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-ports@2x.png' style='max-width:269px;' alt=''>
 
 The default Apache port is 80, so setting it to this makes it so you can access your local sites via the url `http://localhost`. If your Apache port is something else, for example, 8888, you'd have to access your sites via `http://localhost:8888`.
 
@@ -45,7 +45,7 @@ If either of these services don't start up, you'll want to read these notes: [__
 
 
 ### Your first file
-With MAMP installed and your local server running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs/`.
+With MAMP installed and your local server running, test out your first PHP script: Create a new file in a code/text editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs/`.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
 
@@ -57,7 +57,7 @@ That's it! Your local server for Mac is installed, running, and tested.
 
 
 ## XAMPP Setup on Windows
-Download **[xampp-win32-7.2.9-0-VC15-installer.exe](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.2.9/xampp-win32-7.2.9-0-VC15-installer.exe/download)**.
+Download **[xampp-win32-7.2.9-0-VC15-installer.exe](https://www.apachefriends.org/xampp-files/7.2.9/xampp-win32-7.2.9-0-VC15-installer.exe)**.
 
 Install XAMPP...
 
