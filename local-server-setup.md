@@ -45,7 +45,7 @@ If either of these services don't start up, you'll want to read these notes: [__
 
 
 ### Your first file
-With MAMP installed and your local server running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs/`.
+With MAMP installed and your local server running, test out your first PHP script: Create a new file in a code/text editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs/`.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
 
