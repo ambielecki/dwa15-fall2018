@@ -55,9 +55,9 @@ To continue your education on Git, you can refer to the following resources:
 + [gitref.org](http://gitref.org)
 
 ## To-do
-Weel 1:
+Week 1:
 
-+ Local server (MAMP/XAMPP)
++ Local server setup (MAMP/XAMPP)
 
 Week 2:
 
