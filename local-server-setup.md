@@ -23,7 +23,7 @@ Download and install MAMP: <https://mamp.info/en/downloads>
 
 In **Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`.
 
-<img src='https://s3.amazonaws.com/making-the-internet/vc-mamp-htdocs-document-root@2x.png' class='' style='max-width:603px; width:100%' alt=''>
+<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-pref-doc-root.png' style='max-width:499px;' alt=''>
 
 The Document Root is where the server &ldquo;points to&rdquo;, i.e. when you access your local site, it will serve files from this directory.
 
@@ -31,7 +31,7 @@ We'll eventually customize the document root as we start building individual app
 
 Also in Preferences, under **Ports** click *Set Apache & MySQL* ports to `80` & `3306`:
 
-<img src='https://s3.amazonaws.com/making-the-internet/vc-mamp-ports@2x.png' style='width:100%; max-width:540px'>
+<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-ports.png' style='max-width:269px;' alt=''>
 
 The default Apache port is 80, so setting it to this makes it so you can access your local sites via the url `http://localhost`. If your Apache port is something else, for example, 8888, you'd have to access your sites via `http://localhost:8888`.
 
