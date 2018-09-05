@@ -16,6 +16,6 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + [Common commands](/command-line/common-commands.md)
     + [Text editing with Nano](/command-line/nano.md)
 + Servers and Git
-    <!-- + [Intro](/servers-and-git/intro.md) -->
+    + [Intro](/servers-and-git/intro.md) (Posting now, but I'll speak to the content of this note set in Week 2's lecture)
     + [Local server setup](/servers-and-git/local-server-setup.md)
     + [Local server troubleshooting](/servers-and-git/local-server-troubleshooting.md)
