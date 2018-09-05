@@ -23,7 +23,7 @@ Download and install MAMP: <https://mamp.info/en/downloads>
 
 In **MAMP > Preferences > Web Server**, note that the **Document Root** is, by default, set to `/Applications/MAMP/htdocs`, as shown here:
 
-<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-pref-doc-root@2x.png' style='max-width:499px;' alt=''>
+<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-pref-doc-root@2x.png' style='max-width:800px;' alt=''>
 
 The Document Root is where the server &ldquo;points to&rdquo;, i.e. when you access your local site, it will serve files from this directory.
 
@@ -31,7 +31,7 @@ We'll eventually customize the document root as we start building individual app
 
 Also in Preferences, under **Ports** click *Set Apache & MySQL* ports to `80` & `3306`:
 
-<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-ports@2x.png' style='max-width:269px;' alt=''>
+<img src='https://s3.amazonaws.com/making-the-internet/sysadmin-mamp-ports@2x.png' style='max-width:500px;' alt=''>
 
 The default Apache port is 80, so setting it to this makes it so you can access your local sites via the url `http://localhost`. If your Apache port is something else, for example, 8888, you'd have to access your sites via `http://localhost:8888`.
 
@@ -45,7 +45,7 @@ If either of these services don't start up, you'll want to read these notes: [__
 
 
 ### Your first file
-With MAMP installed and your local server running, test out your first PHP script: Create a new file in a code/text editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs/`.
+With MAMP installed and your local server running, you can test out a simple PHP script&mdash; create a new file in a code/text editor and save it as `helloworld.php` in `/Applications/MAMP/htdocs/`.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
 
@@ -74,7 +74,8 @@ If either of these services don't start up, you'll want to read these notes: [__
 
 
 ### Your first file
-Assuming your local server is now running, test out your first PHP script: Create a new file in your code editor and save it as `helloworld.php` in `c:/xampp/htdocs/`. This path is your local server's **Document Root** which is where you'll put all your web files and projects. You may want to create a shortcut to this directory, because you'll be working in it a lot.
+
+With MAMP installed and your local server running, you can test out a simple PHP script&mdash; create a new file in a code/text editor and save it as `helloworld.php` in `c:/xampp/htdocs/`. This path is your local server's **Document Root** which is where you'll put all your web files and projects. You may want to create a shortcut to this directory, because you'll be working in it a lot.
 
 Paste in [this code](https://gist.github.com/susanBuck/3f133c6d64be0f6f27a9) to your `helloworld.php` file.
 
