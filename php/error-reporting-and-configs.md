@@ -21,7 +21,7 @@ In this table of info, we're interested in the following 3 values:
 
 <img src='https://s3.amazonaws.com/making-the-internet/php-php-info-ini-location@2x.png' style='max-width:1004px;' alt='Location of php.ini'>
 
-* MAMP on Mac: `/Applications/MAMP/bin/php/php7.2.12/conf/php.ini` (Note the php version number reflects the version of PHP we're using semester and may differ from the example screenshot above)
+* MAMP on Mac: `/Applications/MAMP/bin/php/php7.2.12/conf/php.ini` (Note the php version number reflects what we're using this semester and may differ from the screenshot above)
 * XAMPP on PC: `C:\xampp\php\php.ini`
 
 
