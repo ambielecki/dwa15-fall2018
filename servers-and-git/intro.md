@@ -16,15 +16,15 @@ Goals:
 
 + Ability to test locally without interfering with production
 + Ability to easily sync changes between local and production, without having to manually manage changes
-+ Removes FTP from the picture; FTP has its purposes but it does not excel at managing a codebase
++ Removes FTP from the picture; FTP has its purposes but it does not excel at managing an evolving codebase
 + Maintain an up-to-date backup of codebase in case of emergencies
 + Track changes to codebase over time
     + Minimize conflicts between team members working on the same code
     + Who changed what
     + When a change was made
     + Ability to &ldquo;roll-back&rdquo; to working code
-+ Ease of collaboration between collaborators
-+ Ability to create *branches* of your codebase for working on new features, starting on different versions, etc.
++ Ease of collaboration
++ Ability to create *branches* of codebase for working on new features, starting on different versions, etc.
 
 
 ## Enter: __Version control__
