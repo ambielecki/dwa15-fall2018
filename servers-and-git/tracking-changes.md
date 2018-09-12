@@ -84,12 +84,12 @@ Example output:
 Finally, push this commit to Github.com with the following command:
 
 ```bash
-$ git push origin master
+$ git push
 ```
 
 Example output:
 ```xml
-/Applications/MAMP/htdocs/hello-world $ git push origin master
+/Applications/MAMP/htdocs/hello-world $ git push
 Counting objects: 3, done.
 Writing objects: 100% (3/3), 290 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
@@ -148,7 +148,7 @@ $ git commit -m "Update README file; added index file with an image."
 And finally, push your commit:
 
 ```bash
-$ git push origin master
+$ git push
 ```
 
 Check your repository in Github.com to make sure the commit is there.
