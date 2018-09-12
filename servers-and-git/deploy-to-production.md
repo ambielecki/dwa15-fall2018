@@ -13,33 +13,28 @@ To get started, head over to <https://digitalocean.com> and create a new account
 ## SSH Key: Your computer <-> DigitalOcean
 After setting up your account, the first thing you'll want to do is **set up a SSH key**. This will prevent you from having to enter your password every time you communicate with DigitalOcean from command line.
 
-For this course, you can use the same `id_rsa.pub` key you created when you configured Github. Use the `cat` command to open this file, then copy its contents.
+For this course, you can use the same `dwa.pub` key you created when you configured Github. Use the `cat` command to open this file, then copy its contents.
 
 Mac:
 
 ```bash
-$ cat ~/.ssh/id_rsa.pub
+$ cat ~/.ssh/dwa.pub
 ```
 
 Windows:
 
 ```bash
-$ cat %home%/.ssh/id_rsa.pub
+$ cat %home%/.ssh/dwa.pub
 ```
 
-Back in DigitalOcean, click the Gear icon (top right) then go to *Settings* and then *Security*.
+Back in DigitalOcean, navigate to your account's security settings (<https://cloud.digitalocean.com/account/security>) and find the **SSH Keys** section where you'll see the option to **Add SSH Key**.
 
-Within *Security* find the **SSH Keys** section and the blue button to **Add SSH Key**.
-
-Paste in the contents of the `id_rsa.pub` file you copied above, and give the key a descriptive name.
+Paste in the contents of the `dwa.pub` file you copied above and give the key a descriptive name.
 
 <img src='https://s3.amazonaws.com/making-the-internet/vc-do-ssh-key@2x.png' style='max-width:888px; width:100%' alt='New SSH key on DigitalOcean'>
 
 That's it for the SSH key for now. In a few steps, we'll test to confirm it's working.
 
-<small>
-Note: Instead of using your Github key, you could have generated a unique one for DigitalOcean. This latter technique is more secure and suggested for projects beyond the scope of this class.
-</small>
 
 
 ## Droplet Pricing
@@ -55,11 +50,11 @@ The base plan which costs $5/month should be enough to serve your needs for this
 
 
 ## New Droplet
-From your DigitalOcean dashboard, find the big green button labeled *Create Droplet* to initiate a new Droplet.
+While logged into DigitalOcean, find the big green button on the top right labeled *Create* and select *Droplet* from the list of options. 
 
 On the screen that follows, make your Droplet settings match the following options:
 
-<img src='https://s3.amazonaws.com/making-the-internet/vc-digital-ocean-new-droplet@2x.png' style='max-width:1031px; width:100%' alt='New Droplet at Digital Ocean'>
+<img src='https://s3.amazonaws.com/making-the-internet/vc-digital-ocean-new-droplet@2x.png' style='max-width:864px; width:100%' alt='New Droplet at Digital Ocean'>
 
 
 ## Log in to your new server droplet via SSH
