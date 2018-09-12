@@ -32,7 +32,7 @@ welcome () {
 
      case $choice in
         1)
-            git push origin master
+            git push
             ssh -t $usernameServer "$docRoot/bash/deploy.sh"
             ;;
         2)
@@ -41,7 +41,7 @@ welcome () {
             line
             git add --all
             git commit -m "$msg"
-            git push origin master
+            git push
             line
             ssh -t $usernameServer "$docRoot/bash/deploy.sh"
             ;;
@@ -60,8 +60,8 @@ welcome () {
 # This function is invoked when this script is invoked on your server
 deploy () {
     cd $docRoot;
-    info "git pull origin master ---------------"
-    haystack=$(git pull origin master)
+    info "git pull ---------------"
+    haystack=$(git pull)
     needle="config"
     if [[ "$haystack" == *"$needle"* ]]; then
         info "Detected change in config directory, running artisan cache:clear"

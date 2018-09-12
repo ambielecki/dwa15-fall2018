@@ -47,7 +47,7 @@ $ git fetch origin
 
 Fetch seems to update the local representation of the remote branch, which doesn't necessarily happen when you do the git pulls.
 
-Note, this only happens when you do `git pull origin master` not `git pull`
+Note, this only happens when you do `git pull` not `git pull`
 
 Reference:
 [1](http://stackoverflow.com/questions/14835515/local-git-clone-is-ahead-of-origin-even-though-no-local-changes-were-made) |

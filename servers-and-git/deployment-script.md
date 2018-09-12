@@ -13,7 +13,7 @@ Then, we run the following 5 commands to deploy these changes on our production 
 
 1. Push changes to our master repository in Github:
 ```bash
-$ git push origin master
+$ git push
 ```
 
 2. SSH into the production server:
@@ -28,7 +28,7 @@ $ cd /var/www/html/foobooks
 
 4. Pull the latest changes:
 ```bash
-$ git pull origin master
+$ git pull
 ```
 
 5. Update packages (if a Laravel-based project):
@@ -99,7 +99,7 @@ Add, commit, and push this new file:
 ```
 $ git add bash/deploy.sh
 $ git commit -m "Added deploy script"
-$ git push origin master
+$ git push
 ```
 
 
@@ -109,7 +109,7 @@ SSH into your server to pull the latest changes (including this new script).
 ```xml
 $ ssh root@server.ip.address
 $ cd /var/www/html/foobooks
-$ git pull origin master
+$ git pull
 ```
 
 With the deploy script now on your server, give it executable [permissions](/command-line/permissions.md) (`+x`)
@@ -156,9 +156,9 @@ How would you like to proceed?
 Enter your choice:
 ```
 
-If you choose option 1, the script will push any pending commits, then ssh into your server to run `git pull origin master` followed by `composer install --no-dev`.
+If you choose option 1, the script will push any pending commits, then ssh into your server to run `git pull` followed by `composer install --no-dev`.
 
-If you choose option 2, the script will `git add --all` to stage all changed files, then it will prompt you to enter a commit message for these changes. After you enter the commit message, the script will ssh into your server to run `git pull origin master` followed by `composer install --no-dev`.
+If you choose option 2, the script will `git add --all` to stage all changed files, then it will prompt you to enter a commit message for these changes. After you enter the commit message, the script will ssh into your server to run `git pull` followed by `composer install --no-dev`.
 
 
 ## Common problems and tips
@@ -185,7 +185,7 @@ total 8
 ```
 
 ## Customize
-`git pull origin master` and `composer install --no-dev` are the two main deployment commands we need to run on our servers, but deployment scripts can be customized to run more commands based on your application/team needs.
+`git pull` and `composer install --no-dev` are the two main deployment commands we need to run on our servers, but deployment scripts can be customized to run more commands based on your application/team needs.
 
 For example, Laravel has an artisan command to combine all configuration files into one flat file, making the loading of configurations quicker. It'd be logical to run this command with each deployment to regenerate that flat file, so the following command might be added to the `deploy` function in the `deploy.sh` script:
 

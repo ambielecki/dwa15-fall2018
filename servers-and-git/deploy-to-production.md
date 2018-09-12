@@ -182,7 +182,7 @@ Once your repository is cloned from Github.com to DigitalOcean, the steps for de
 
 1. SSH in to your Droplet
 2. Change directories into your project
-3. Run `git pull origin master` to sync any new changes
+3. Run `git pull` to sync any new changes
 
 So a typical workflow might look like this:
 
