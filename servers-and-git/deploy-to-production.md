@@ -31,7 +31,7 @@ Back in DigitalOcean, navigate to your account's security settings (<https://clo
 
 Paste in the contents of the `dwa.pub` file you copied above and give the key a descriptive name.
 
-<img src='https://s3.amazonaws.com/making-the-internet/vc-do-ssh-key@2x.png' style='max-width:888px; width:100%' alt='New SSH key on DigitalOcean'>
+<img src='https://s3.amazonaws.com/making-the-internet/vc-do-ssh-key@2x.png' style='max-width:1347px; width:100%' alt='New SSH key on DigitalOcean'>
 
 That's it for the SSH key for now. In a few steps, we'll test to confirm it's working.
 
@@ -54,7 +54,7 @@ While logged into DigitalOcean, find the big green button on the top right label
 
 On the screen that follows, make your Droplet settings match the following options:
 
-<img src='https://s3.amazonaws.com/making-the-internet/vc-digital-ocean-new-droplet@2x.png' style='max-width:864px; width:100%' alt='New Droplet at Digital Ocean'>
+<img src='https://s3.amazonaws.com/making-the-internet/vc-digital-ocean-new-droplet@2x.png' style='max-width:1007px; width:100%' alt='New Droplet at Digital Ocean'>
 
 
 ## Log in to your new server droplet via SSH

@@ -36,11 +36,11 @@ Once an application is set up, your development workflow can be summarized as fo
 + __Track__
     + Stage all the files you wish to "go live" with (`git add`)
     + Create a commit of all staged files (`git commit -m "Commit message goes here"`)
-    + Push your commit to Github.com (`git push origin master`)
+    + Push your commit to Github.com (`git push`)
 + __Deploy__
     + SSH into your DigitalOcean server
     + Navigate to the document root of the app you're working on (e.g. `cd /var/www/hello-world`)
-    + Pull recent commits from Github.com (`git pull origin master`)
+    + Pull recent commits from Github.com (`git pull`)
     + If a Laravel application, run `composer install` to rebuild classmap and pull in any package updates. 
     + View app in browser via production URL, confirming everything is working as expected
     
