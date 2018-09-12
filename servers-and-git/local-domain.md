@@ -15,7 +15,7 @@ In order to do this, we'll configure our Apache web servers to run multiple appl
 
 ## Step 1. Tell Apache to use the virtual hosts file
 
-First, locate and open `httpd.conf`, your local server's Apache configuration file.
+First, locate and open `httpd.conf`, your local server's Apache configuration file:
 
 * Mac: `/Applications/MAMP/conf/apache/httpd.conf`
 * Windows: `c:\xampp\apache\conf\httpd.conf`
@@ -41,15 +41,8 @@ Next, tell Apache on your local server how to handle requests to `http://hello-w
 
 This is done via Apache's `httpd-vhosts.conf` config file which can be found at the following locations:
 
-Mac:
-```bash
-/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
-```
-
-Windows:
-```bash
-c:\xampp\apache\conf\extra\httpd-vhosts.conf
-```
+* Mac: `/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf`
+* Windows: `c:\xampp\apache\conf\extra\httpd-vhosts.conf`
 
 At the __bottom__ of this file, add your own VirtualHost block:
 
@@ -82,7 +75,6 @@ Windows/XAMPP users, yours will look like this. (The details of this example are
 </VirtualHost>
 ```
 
-
 A breakdown of the key parts of the above VirtualHost blocks:
 1. `ServerName` (use `.loc` to distinguish it from the live TLD)
 2. `DocumentRoot` (Points to the root of the application/project)
@@ -100,7 +92,7 @@ Next, we need to edit your computer's `hosts` file which can be used to route do
 
 (Note, there's no extension on this file, it's simply called `hosts`)
 
-The hosts file is protected, so you'll need to open it with administrator privileges. This can be done with nano via the admin command `sudo` on Mac, or `elevate` on Windows.
+The hosts file is protected, so you'll need to open it with administrator privileges. This can be done with *nano* via the admin command `sudo` on Mac, or `elevate` on Windows.
 
 Mac:
 ```bash
