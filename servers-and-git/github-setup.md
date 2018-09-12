@@ -1,6 +1,6 @@
-## Github setup
+# Github setup
 
-### Summary of steps
+## Summary of steps
 + Create an account at Github
 + Create public/private SSH key on your machine
 + Add public SSH key to Github
@@ -78,7 +78,7 @@ Regardless of whether you enter a password or not, hit *Enter* to proceed, and t
 
 When the above command is complete, list the contents of your `.ssh` directory and you should see two new key files, `dwa` and `dwa.pub`.
 
-Next, you want to add this key to your config file so it can be used whenever you attempt to make an SSH connection.
+Next, you want to add this key to your SSH config file so it can be used whenever you attempt to make an SSH connection.
 
 To do this, edit/create `~/.ssh/config` via nano:
 
@@ -138,6 +138,7 @@ With the contents of `dwa.pub` in your clipboard, paste the contents into the *K
 
 Finally, click **Add SSH key**.
 
+## Test it 
 To test your new SSH key, run the following command to connect to Github over SSH:
 
 ```bash

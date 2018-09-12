@@ -24,7 +24,7 @@ There are two separate records you'll want to configure in your DNS settings. Th
 + __Type:__ A Record
     + Short for *Address Record*; points a domain to an IP address
 + __Host:__ @
-    + Short of "apex"; represents the main domain, e.g. yourdomain.com
+    + Short for "apex"; represents the main domain, e.g. yourdomain.com
 + __Value:__ Your DigitalOcean droplet IP address
 + __TTL:__ 1 min
     + Time-to-live; indicates how long it will take for Namecheap's DNS servers to refresh their records regarding this entry.

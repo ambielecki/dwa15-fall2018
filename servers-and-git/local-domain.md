@@ -39,16 +39,16 @@ Include conf/extra/httpd-vhosts.conf
 
 Next, tell Apache on your local server how to handle requests to `http://hello-world.loc` via a Virtual Host entry.
 
-This is done via Apache's `httpd-vhosts.conf` config file.
+This is done via Apache's `httpd-vhosts.conf` config file which can be found at the following locations:
 
 Mac:
 ```bash
-$ sudo nano /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
+/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
 ```
 
 Windows:
 ```bash
-$ elevate nano c:\xampp\apache\conf\extra\httpd-vhosts.conf
+c:\xampp\apache\conf\extra\httpd-vhosts.conf
 ```
 
 At the __bottom__ of this file, add your own VirtualHost block:
@@ -93,14 +93,14 @@ Note, the above VirtualHost blocks assumes you're running on Port 80 (`*:80`). I
 
 ## Step 3. Create a new host
 
-Next, open your computer's `hosts` file. This file can be used to route domains to an IP address of your choice.
+Next, we need to edit your computer's `hosts` file which can be used to route domains to an IP address of your choice.
 
 * Mac: `/private/etc/hosts`
 * Windows: `c:/Windows/System32/drivers/etc/hosts`
 
 (Note, there's no extension on this file, it's simply called `hosts`)
 
-The hosts file is protected, so you'll need to open it with administrator privileges.
+The hosts file is protected, so you'll need to open it with administrator privileges. This can be done with nano via the admin command `sudo` on Mac, or `elevate` on Windows.
 
 Mac:
 ```bash
