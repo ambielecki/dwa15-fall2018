@@ -78,6 +78,21 @@ Regardless of whether you enter a password or not, hit *Enter* to proceed, and t
 
 When the above command is complete, list the contents of your `.ssh` directory and you should see two new key files, `dwa` and `dwa.pub`.
 
+Next, you want to add this key to your config file so it can be used whenever you attempt to make an SSH connection.
+
+To do this, edit/create `~/.ssh/config` via nano:
+
+```
+$ nano ~/.ssh/config
+```
+
+And add this line at the very end of the config file:
+```
+IdentityFile ~/.ssh/dwa
+```
+
+`ctrl + x` + `y` + *Enter* to save your changes and exit nano.
+
 
 ## Add SSH key at Github.com
 1. In Github.com, after logging in, go to **Settings** via the drop down menu below your avatar on the top right.
