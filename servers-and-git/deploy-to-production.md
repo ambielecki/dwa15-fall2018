@@ -54,6 +54,8 @@ While logged into DigitalOcean, find the big green button on the top right label
 
 On the screen that follows, make your Droplet settings match the following options:
 
+*2018-09-16 Note: In the lecture video, you saw me select LAMP 16.04. Since recording, DigitalOcean updated their LAMP stack to 18.04. Either version will work for our purposes.*
+
 <img src='https://s3.amazonaws.com/making-the-internet/vc-digital-ocean-new-droplet@2x.png' style='max-width:1007px; width:100%' alt='New Droplet at Digital Ocean'>
 
 
