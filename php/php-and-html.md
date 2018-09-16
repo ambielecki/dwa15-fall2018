@@ -153,7 +153,7 @@ if (in_array($day, ['Friday', 'Saturday', 'Sunday'])) {
 # Closing PHP tag purposefully excluded; reason why explained below.
 ```
 
-In place of the logic code you extracted from `today.php`, add a require statement to import the code from `todayLogic.php`:
+In place of the logic code you extracted from `today.php`, add a require statement to import the code from `today-logic.php`:
 
 
 ```html
