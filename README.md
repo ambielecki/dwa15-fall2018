@@ -27,14 +27,14 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + [Production domain](/servers-and-git/production-domain.md)
     + [Summary](/servers-and-git/summary.md)
     + Extras
-            + [Local server troubleshooting](/servers-and-git/local-server-troubleshooting.md)
-            + [Git tips and troubleshooting](/servers-and-git/git-tips-and-troubleshooting.md)
-            + [SSH keys cheat sheet](/servers-and-git/ssh-keys-cheat-sheet.md)
-            + [New app cheat sheet](/servers-and-git/new-app-cheat-sheet.md)
-            + [Increasing server security](/servers-and-git/increasing-server-security.md)
-            + [DigitalOcean: Permission Denied (publickey)](servers-and-git/permission-denied-public-key.md)
-            + Deployment script
-            + HTTPS/SSL
+        + [Local server troubleshooting](/servers-and-git/local-server-troubleshooting.md)
+        + [Git tips and troubleshooting](/servers-and-git/git-tips-and-troubleshooting.md)
+        + [SSH keys cheat sheet](/servers-and-git/ssh-keys-cheat-sheet.md)
+        + [New app cheat sheet](/servers-and-git/new-app-cheat-sheet.md)
+        + [Increasing server security](/servers-and-git/increasing-server-security.md)
+        + [DigitalOcean: Permission Denied (publickey)](servers-and-git/permission-denied-public-key.md)
+        + Deployment script
+        + HTTPS/SSL
 + PHP
     + [Intro](/php/intro.md)
     + [Syntax](/php/syntax.md)
