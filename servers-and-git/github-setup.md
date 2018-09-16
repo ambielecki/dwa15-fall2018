@@ -78,12 +78,13 @@ Regardless of whether you enter a password or not, hit *Enter* to proceed, and t
 
 When the above command is complete, list the contents of your `.ssh` directory and you should see two new key files, `dwa` and `dwa.pub`.
 
+## SSH config file
 Next, you want to add this key to your SSH config file so it can be used whenever you attempt to make an SSH connection.
 
-To do this, edit/create `~/.ssh/config` via nano:
+To do this, edit/create the file `config` from within your .ssh directory:
 
 ```
-$ nano ~/.ssh/config
+$ nano config
 ```
 
 And add this line at the very end of the config file:
