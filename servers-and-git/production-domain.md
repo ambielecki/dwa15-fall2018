@@ -10,7 +10,7 @@ We'll use one single domain for all the work in this course, but we'll be able t
 
 In order to do this, you first need a domain. I recommend creating your domain via **[Namecheap](http://www.namecheap.com/?aff=61057)**. As of this writing, Namecheap is offering free domain names for students (with a `.edu` email address) via <https://nc.me>.
 
-If you're already comfortable with another domain provider you can use that but note all my examples will use Namecheap.
+If you're already comfortable with another domain provider you can use that but my examples will use Namecheap.
 
 Also, if you already own a domain you'd like to use, I only recommend doing so if you're comfortable configuring DNS settings&mdash; I don't want your practice in this course to interfere with any existing real-world sites.
  
@@ -43,9 +43,9 @@ There are two separate records you'll want to configure in your DNS settings. Th
 ## Test it out
 When you're done, click **Save all Changes**.
 
-Give the above settings a few minutes to take effect, then try accessing your main domain (e.g. `http://yourdomain.com`) and also any subdomain (e.g. `http://hello-world.me`).
+Give the above settings a few minutes to take effect, then try accessing your main domain (e.g. `http://yourdomain.com`) and also any subdomain (e.g. `http://hello-world.yourdomain.com`).
 
-For both of these URLs should load DigitalOceans default index page for new LAMP servers which feature a happy shark.
+Currently, both of these URLs should load DigitalOcean's default index page for new LAMP servers which feature a happy shark.
 
 <img src='https://s3.amazonaws.com/making-the-internet/version-control-both-domain-records-working@2x.png' style='max-width:1000px;' alt='Both domain records working'>
 
@@ -76,7 +76,12 @@ However, we want to configure things so that a subdomain can point to a differen
 
 To do this, we need to tell the server how to handle incoming traffic to a given subdomain. This is done via a VirtualHost configuration, similar to the configurations we saw on our local servers. 
 
-To start, copy the following code into a new text editor window (your code editor, Notepad, Text Editor, whatever):
+On DigitalOcean, we'll do this via the config file `/etc/apache2/sites-enabled/000-default.conf`, which you can open in nano with the following command:
+```bash
+$ nano /etc/apache2/sites-enabled/000-default.conf
+```
+
+At the end of this file, paste in the following VirtualHost block then edit it to reflect your ServerName (instead of mine, `dwa15.me`):
 
 ```bash
 <VirtualHost *:80>
@@ -89,24 +94,6 @@ To start, copy the following code into a new text editor window (your code edito
 ```
 
 In plain English, this VirtualBlock block code says: *when traffic comes in via `hello-world.dwa15.me`, point to the `/var/www/html/hello-world` directory*.
-
-Edit this VirtualHost block so that the the `ServerName` (`hello-world.dwa15.dev`) value matches *your* domain.
-
-Also change the `DocumentRoot` **and** `Directory` path to match the path to your hello-world directory on DigitalOcean, if it's different from the example.
-
-With your edits in place, let's now look at where to put this configuration on the server.
-
-To begin, SSH into your DigitalOcean server.
-
-Open `/etc/apache2/sites-enabled/000-default.conf` in nano:
-
-```bash
-$ nano /etc/apache2/sites-enabled/000-default.conf
-```
-
-This file is where your VirtualHost specifications live.
-
-In nano, at the *bottom* of `000-default.conf`, paste in your edited VirtualHost block.
 
 <img src='https://s3.amazonaws.com/making-the-internet/vc-pasting-virtual-host-block@2x.png' style='max-width:1152px'>
 
@@ -124,6 +111,7 @@ $ service apache2 restart
 
 Once the restart is complete, test out your subdomain `http://hello-world.yourdomain.com`. You should see the same version of your *hello-world* application that you saw when testing it locally.
 
+When building your projects, you'll add new VirtualHost blocks following the above template, editing the `ServerName`, `DocumentRoot`, and `Directory` to match the appropriate values for that project.
 
 ## Aside
 __DNS management in DigitalOcean:__ It's possible to configure your domain so that it uses DigitalOcean's nameservers rather than your domain provider's nameservers, but that is not the setup we use in this course. Given this, there's nothing you need to do in  *DigitalOcean* > *Networking* > *Domains*. I recommend using different providers for domain management and server management so that if one fails, you still have access to the other.
