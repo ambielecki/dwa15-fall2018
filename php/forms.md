@@ -23,14 +23,14 @@ In addition to these details, input data from the user can also be sent as part 
 
 How the data is sent depends on what request type is being used&mdash; HTTP protocol supports two types: GET and POST.
 
-+ When you visit a web page, the GET method is used.
++ When you visit a web page (either by typing in the URL or via a link), the GET method is used.
 + When you submit a form to a web page, either the GET or POST method can be used.
 
 
 ## GET Example
-This semester, many of our demos will revolve around an example called **foobooks**, which will be a simple application for organizing a collection of books.
+This semester, many of our demos will revolve around an example called **foobooks**, which will be a simple application for organizing a collection of books. 
 
-With that in mind, let's build our very first iteration of foobooks and demonstrate processing a form with the GET method.
+With that in mind, let's build a super basic iteration of foobooks to demonstrate processing a form with the GET method.
 
 Create a new file called `foobooks.php` with this code:
 ```php
@@ -94,7 +94,7 @@ __GET Summary:__ Submit a form via the GET method and all the data from that for
 Update the above example with the following changes:
 
 + In `foobooks.php`, change the form method to POST
-+ In `search.php`, change both occurances of $_GET to $_POST
++ In `search.php`, change both occurances of `$_GET` to `$_POST`
 
 Refresh `foobooks.php` and submit the form again.
 
@@ -124,32 +124,46 @@ POST...
 
 
 ## Form design flow
-There are different ways you can design your form flow&mdash; the following describes three different designs. You can find working examples of each at <http://php.dwa15.com/form-flow>.
+There are different ways you can design your form flow&mdash; the following describes three different designs.
 
 
-### Version A
-In the example in the above notes, we used a design that involves 2 pages, like this:
-<img src='https://s3.amazonaws.com/making-the-internet/php-form-designA@2x.png' style='max-width:402px;' alt='Form design Version A'>
+### Design A
+In the example shown above, we used a design that involves 2 files/pages, like this:
+<img src='https://s3.amazonaws.com/making-the-internet/php-form-designA@2x.png' style='max-width:532px;' alt='Form design Version A'>
+
+__Example
+[demo](http://php.dwa15.com/form-flow/version-a/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-a)__
 
 In this design, the visitor can refresh the `search.php` page and re-submit the form data, which might not be ideal if, for example, the purpose of the form is to add a new entry to a database. Given this, this design is best reserved for forms submitted via GET.
 
-### Version B
+
+
+
+### Design B
 Another flow to consider, especially when working with POST, is the following:
-<img src='https://s3.amazonaws.com/making-the-internet/php-form-designB@2x.png' style='max-width:625px;' alt='Form design Version B'>
+<img src='https://s3.amazonaws.com/making-the-internet/php-form-designB@2x.png' style='max-width:752px;' alt='Form design Version B'>
+__Example
+[demo](http://php.dwa15.com/form-flow/version-b/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-b)__
 
 In this design, `foobooks.php` submits to `search.php` to process the form data, which then redirects the visitor to a confirmation page (`done.php`).
 
 This design is ideal for POST forms because the visitor can refresh the confirmation page and not risk re-submitting their data which could result in unintended consequences (like repeat rows in a database table).
 
-In order for this flow to work, we need a mechanism to pass data from the search.php page to the done.php page so the results can be shown. One way to do this is via [PHP sessions](http://php.net/manual/en/session.examples.basic.php) (which is demonstrated in the abovementioned examples).
+In order for this flow to work, we need a mechanism to pass data from the `search.php` page to the `done.php` page so the results can be shown. One way to do this is via [PHP sessions](http://php.net/manual/en/session.examples.basic.php), which are covered in this note set: [Cookies and sessions](/php/cookies-and-sessions.md).
 
-### Version C
-The final form flow manages all three phases of the form process via one page:
-<img src='http://making-the-internet.s3.amazonaws.com/php-form-designC@2x.png' style='max-width:247px;' alt='Form design Version C'>
+
+
+
+### Design C
+The final form flow we'll study submits a form to a processing file (`search.php`) which then redirects the visitor *back* to `foobooks.php`, sending with it the results of the processing, also using PHP sessions (similar to Version B).
+
+<img src='http://making-the-internet.s3.amazonaws.com/php-form-designC@2x.png' style='max-width:622px;' alt='Form design Version C'>
+__Example
+[demo](http://php.dwa15.com/form-flow/version-c/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-c)__
+
 
 This flow can be ideal for actions like editing data (e.g. info about a book), where it's often desirable to display the form again after the changes are saved.
 
-On the flipside, this design can result in more complex code because you have to cater to different circumstances (e.g. a fresh page load when there's no data vs. the form has been submitted and now there's data).
 
 
 ## More form input type examples
