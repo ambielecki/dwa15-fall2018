@@ -166,5 +166,5 @@ This flow can be ideal for actions like editing data (e.g. info about a book), w
 ## More form input type examples
 Beyond text inputs (shown in the examples above), your project may also require checkboxes, radios, or dropdown selects. Examples of each can be seen at the following urls.
 
-+ Examples: <http://php.dwa15.com/form-inputs/>
++ Examples: <http://php.dwa15.com/forms-inputs/>
 + Code for examples: <https://github.com/susanBuck/dwa15-php/tree/master/forms-inputs>
