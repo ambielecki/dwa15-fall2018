@@ -8,6 +8,9 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
 
 + Misc
     + [Markdown](/misc/markdown.md)
+    + [PhpStorm](/misc/phpstorm.md)
+    + [Code style](/misc/code-style.md)
+    + [Interface](/misc/interface.md)
 + Command Line
     + [Introduction](/command-line/intro.md)
     + [Mac Terminal](/command-line/mac-terminal.md)
@@ -34,7 +37,7 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
         + [Increasing server security](/servers-and-git/increasing-server-security.md)
         + [DigitalOcean: Permission Denied (publickey)](servers-and-git/permission-denied-public-key.md)
         + Deployment script
-        + HTTPS/SSL
+        + [HTTPS/SSL](/servers-and-git/https-ssl.md)
 + PHP
     + [Intro](/php/intro.md)
     + [Syntax](/php/syntax.md)
@@ -46,14 +49,9 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + [Imports](/php/imports.md)
     + [Arrays](/php/arrays.md)
     + [PHP and HTML](/php/php-and-html.md)
-    + Loops
-    + Forms
-    + Form security
-    + OOP
-    + Validation
-    + Using Form.php
+    + [Loops](/php/loops.md)
+    + [Forms](/php/forms.md)
+    + [Cookies and Sessions](/php/cookies-and-sessions.md)
     + Extras
-        + Random quote tips (P1)
+        + [Random quote tips (P1)](/php/random-quote-tips.md)
         + [Garbage collection](/php/garbage-collection.md)
-        + Extending Form.php
-        + Cookies & Sessions
