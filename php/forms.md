@@ -156,8 +156,8 @@ In order for this flow to work, we need a mechanism to pass data from the `searc
 The final form flow we'll study submits a form to a processing file (`search.php`) which then redirects the visitor *back* to `foobooks.php`, sending with it the results of the processing, also using PHP sessions (similar to Version B).
 
 <img src='http://making-the-internet.s3.amazonaws.com/php-form-designC@2x.png' style='max-width:622px;' alt='Form design Version C'>
-__Example: [demo](http://php.dwa15.com/form-flow/version-c/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-c)__
 
+__Example: [demo](http://php.dwa15.com/form-flow/version-c/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-c)__
 
 This flow can be ideal for actions like editing data (e.g. info about a book), where it's often desirable to display the form again after the changes are saved.
 
