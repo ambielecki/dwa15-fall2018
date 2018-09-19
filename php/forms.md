@@ -131,8 +131,7 @@ There are different ways you can design your form flow&mdash; the following desc
 In the example shown above, we used a design that involves 2 files/pages, like this:
 <img src='https://s3.amazonaws.com/making-the-internet/php-form-designA@2x.png' style='max-width:532px;' alt='Form design Version A'>
 
-__Example
-[demo](http://php.dwa15.com/form-flow/version-a/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-a)__
+__Example: [demo](http://php.dwa15.com/form-flow/version-a/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-a)__
 
 In this design, the visitor can refresh the `search.php` page and re-submit the form data, which might not be ideal if, for example, the purpose of the form is to add a new entry to a database. Given this, this design is best reserved for forms submitted via GET.
 
@@ -142,8 +141,7 @@ In this design, the visitor can refresh the `search.php` page and re-submit the 
 ### Design B
 Another flow to consider, especially when working with POST, is the following:
 <img src='https://s3.amazonaws.com/making-the-internet/php-form-designB@2x.png' style='max-width:752px;' alt='Form design Version B'>
-__Example
-[demo](http://php.dwa15.com/form-flow/version-b/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-b)__
+__Example: [demo](http://php.dwa15.com/form-flow/version-b/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-b)__
 
 In this design, `foobooks.php` submits to `search.php` to process the form data, which then redirects the visitor to a confirmation page (`done.php`).
 
@@ -158,8 +156,7 @@ In order for this flow to work, we need a mechanism to pass data from the `searc
 The final form flow we'll study submits a form to a processing file (`search.php`) which then redirects the visitor *back* to `foobooks.php`, sending with it the results of the processing, also using PHP sessions (similar to Version B).
 
 <img src='http://making-the-internet.s3.amazonaws.com/php-form-designC@2x.png' style='max-width:622px;' alt='Form design Version C'>
-__Example
-[demo](http://php.dwa15.com/form-flow/version-c/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-c)__
+__Example: [demo](http://php.dwa15.com/form-flow/version-c/foobooks.php) | [code](https://github.com/susanBuck/dwa15-php/tree/master/form-flow/version-c)__
 
 
 This flow can be ideal for actions like editing data (e.g. info about a book), where it's often desirable to display the form again after the changes are saved.
