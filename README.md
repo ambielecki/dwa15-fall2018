@@ -55,3 +55,4 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + Extras
         + [Random quote tips (P1)](/php/random-quote-tips.md)
         + [Garbage collection](/php/garbage-collection.md)
+        + [Syntactic sugar](/php/syntactic-sugar.md)
