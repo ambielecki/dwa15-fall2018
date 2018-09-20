@@ -17,7 +17,7 @@ This code includes 2 helper functions:
 
 To test the helpers out, create a *second* file called `helpers-demo.php` that has this code:
 
-```
+```php
 <?php
 # Import the helper functions
 require 'helpers.php';
