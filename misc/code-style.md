@@ -1,3 +1,6 @@
+>> &ldquo;Any fool can write code that a computer can understand. Good programmers write code that humans can understand.&rdquo; – Martin Fowler, Refactoring: Improving the Design of Existing Code.
+
+
 # Code style
 It's common for development teams to have a coding style guide&mdash; a set of rules for how code should be written, which covers details like:
 
