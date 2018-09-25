@@ -89,3 +89,11 @@ Others:
 + Version Control
 + Debugging
 
+
+
+## Whitespace/Indentation
+>> Code MUST use 4 spaces for indenting, not tabs. -[PSR-2 Coding Style Guide](https://www.php-fig.org/psr/psr-2/)
+
+<img src='https://s3.amazonaws.com/dwa15.com/php-show-whitespaces-in-phpstorm.png' style='max-width:521px;' alt='PhpStorm settings for white space'>
+
+<img src='https://s3.amazonaws.com/dwa15.com/php-phpstorm-indent-settings.png' style='max-width:521px;' alt=''>
