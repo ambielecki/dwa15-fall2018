@@ -31,7 +31,7 @@ Place a copy of [Form.php](https://github.com/susanBuck/dwa15-php/blob/master/in
 Include `Form.php`; you'll use this class in both your logic and display file, so include it at the top of your display file before your logic file is included.
 
 ```php
-require('Form.php');
+require 'Form.php';
 ```
 
 In your logic file, instantiate with the $_GET or $_POST request (depending on which method your form is using):
@@ -111,7 +111,7 @@ The validator will loop through each field's rules, building an array of error m
 Example of how you might output the errors in your display file:
 
 ```html 
-<?php if ($form->hasErrors) : ?>
+<?php if ($hasErrors) : ?>
     <div class='alert alert-danger'>
         <ul>
             <?php foreach ($errors as $error) : ?>
@@ -120,12 +120,4 @@ Example of how you might output the errors in your display file:
         </ul>
     </div>
 <?php endif ?>
-```
-
-## Prefill form inputs 
-Prefill a form input with and without a default value:
-```php
-<input type='text' name='email' value='<?= $form->prefill("email") ?>'>
-
-<input type='text' name='email' value='<?= $form->prefill("email", "example@gmail.com") ?>'>
 ```
