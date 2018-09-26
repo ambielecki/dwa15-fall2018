@@ -152,8 +152,8 @@ Here's a basic example:
 
 ```php
 <?php
-require('libraries/Texter/Message.php');
-require('libraries/AutoCaller/Message.php');
+require 'libraries/Texter/Message.php';
+require 'libraries/AutoCaller/Message.php';
 
 $message1 = new Texter\Message();
 $message2 = new AutoCaller\Message();
@@ -163,7 +163,7 @@ Another way you can specify a class namespace is by adding `use` statement in th
 
 ```php
 <?php
-require('Book.php');
+require 'Book.php';
 
 use Foobooks\Book;
 
@@ -174,8 +174,8 @@ Using this approach, if I were working with classes that had conflicting names, 
 
 ```php
 <?php
-require('libraries/Texter/Message.php');
-require('libraries/AutoCaller/Message.php');
+require 'libraries/Texter/Message.php';
+require 'libraries/AutoCaller/Message.php';
 
 use Texter\Message as TextMessage;
 use AutoCaller\Message as VoiceMessage;
