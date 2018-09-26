@@ -28,18 +28,23 @@ Place a copy of [Form.php](https://github.com/susanBuck/dwa15-php/blob/master/in
 
 
 ## Usage 
-Include `Form.php`; you'll use this class in both your logic and display file, so include it at the top of your display file before your logic file is included.
+Include `Form.php` and invoke the `use` statement to make the class avilable:
 
 ```php
 require 'Form.php';
+
+use DWA\Form;
 ```
 
-In your logic file, instantiate with the $_GET or $_POST request (depending on which method your form is using):
+Innstantiate an object from the Form class, passing in the $_GET or $_POST superglobal (depending on which method your form request is using):
 ```php
-$form = new DWA\Form($_GET);
-``` 
+$form = new Form($_GET);
+```
 
-## Methods
+
+## Methods/Properties examples
+The following is a series of examples showing the usage of Form's methods and properties. For complete details, read through the `Form.php` class.
+
 Extract a value from the request:
 ```php
 $email = $form->get('email');
@@ -63,8 +68,12 @@ Determine if the form submission has occurred:
 $isSubmitted = $form->isSubmitted();
 ```
 
-Validate form data by invoking the `validate` method with an array of fields => validation rules.
+Access Form's `hasErrors` property which contains a Boolean value as to whether or not the form has errors.
+```php
+$hasErrors = $form->hasErrors;
+```
 
+Validate form data by invoking the `validate` method with an array of fields => validation rules.
 ```php
 $errors = $form->validate(
     [
@@ -83,7 +92,7 @@ $errors = $form->validate(
 
 Note that a field can have multiple rules applied, with each rule separated by a `|` character.
 
-The validator will loop through each field's rules, building an array of error messages. Only the first error for a given field will be recorded.
+The validator will loop through each field's rules, building an array of error messages. Only the first error for a given field will be reported.
 
 
 ## Available validation rules
@@ -109,7 +118,6 @@ The validator will loop through each field's rules, building an array of error m
  
 ## Displaying errors
 Example of how you might output the errors in your display file:
-
 ```html 
 <?php if ($hasErrors) : ?>
     <div class='alert alert-danger'>
