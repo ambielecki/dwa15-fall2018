@@ -1,4 +1,4 @@
-# Form security
+# Form security (XSS)
 When your application contains a form that accepts text input, you need to be on the lookout for ways in which the text a visitor enters can create unexpected or even ill-intentioned results.
 
 Consider our simple [foobooks0](http://foobooks0.dwa15.me) search feature, which accepts a search term that is processed and displayed on the page.
@@ -14,11 +14,9 @@ But what happens if the visitor enters something like the following:
 + `<script>alert('hi!')</script>`
 + `<style>body { background-color:red }</style>`
 
-Because the above two &ldquo;search terms&rdquo; contain client-side code, they'll produce an undesirable outcome (a JavaScript alert and the page will turn red) when they're echo'd as part of the results. 
+Because the above two &ldquo;search terms&rdquo; contain client-side code, they could produce an undesirable outcome (a JavaScript alert and the page will turn red) when they're echo'd as part of the results.
 
-```html
-You searched for <em><?= $searchTerm ?></em>
-```
+<img src='https://s3.amazonaws.com/making-the-internet/php-xss-example-in-foobooks0.png' style='max-width:985px;' alt=''>
 
 In the case of foobooks0, this is not a huge concern, because the visitor who enters such a search term would only be impacting their own experiencing with using the site.
 
