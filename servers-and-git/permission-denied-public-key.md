@@ -79,13 +79,13 @@ Run `exit` to disconnect from your server. We want to go back to your local mach
 
 
 ## Step 4) Fix SSH keys
-On your local machine, run the following command, replacing `your.digital.ocean.ip.address`.
+On your local machine, run the following command, replacing `your.digital.ocean.ip.address`. (This command assumes your public key is named `dwa.pub`; if it's something else, make that edit as well.)
 
 ```
-cat ~/.ssh/id_rsa.pub | ssh root@your.digital.ocean.ip.address "cat >> ~/.ssh/authorized_keys"
+cat ~/.ssh/dwa.pub | ssh root@your.digital.ocean.ip.address "cat >> ~/.ssh/authorized_keys"
 ```
 
-This will take a copy of your local `~/.ssh/id_rsa.pub` and put it in your `authorized_keys` file on the server.
+This will take a copy of your local public key (`~/.ssh/dwa.pub`) and put it in your `authorized_keys` file on the server.
 
 When you run this command, it will ask for your server password, and after you type it in and hit enter you won't get any confirmation message, but it should have got the job done.
 
