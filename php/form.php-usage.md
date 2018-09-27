@@ -1,14 +1,15 @@
 # Form.php usage
-Form.php is a class which contains form-related helper methods including validation.
+`Form.php` is a class which contains form-related helper methods including validation.
 
 [You can download a copy of Form.php here.](https://github.com/susanBuck/dwa15-php/blob/master/includes/Form.php)
 
-Examples of Form.php in use can be found here:
+Examples of `Form.php` in use can be found here:
++ Demo: 
+    + <http://php.dwa15.com/validation.php>
 + Code:
     + <https://github.com/susanBuck/dwa15-php/blob/master/validation.php>
     + <https://github.com/susanBuck/dwa15-php/blob/master/validation-logic.php>
-+ In action: 
-    + <http://php.dwa15.com/validation.php>
+
 
 
 ## Known limitations
@@ -36,7 +37,7 @@ require 'Form.php';
 use DWA\Form;
 ```
 
-Innstantiate an object from the Form class, passing in the $_GET or $_POST superglobal (depending on which method your form request is using):
+Instantiate an object from the Form class, passing in the $_GET or $_POST superglobal (depending on which method your form request is using):
 ```php
 $form = new Form($_GET);
 ```
@@ -123,7 +124,7 @@ Example of how you might output the errors in your display file:
     <div class='alert alert-danger'>
         <ul>
             <?php foreach ($errors as $error) : ?>
-                <li><?=$error ?></li>
+                <li><?= $error ?></li>
             <?php endforeach ?>
         </ul>
     </div>
