@@ -143,4 +143,4 @@ At this point, you DigitalOcean Droplet has everything it needs to run a Laravel
 
 ## Reference
 + [Ubuntu: How to manage software repositories from the command line](https://help.ubuntu.com/community/Repositories/CommandLine)
-+ [Discrepancy between PHP versions on local vs. DigitalOcean](https://gist.github.com/susanBuck/f949e701c239a7468de64cd89fe0347b)
+
