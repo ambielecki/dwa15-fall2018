@@ -11,7 +11,7 @@ These instructions are for Mac users; [for Windows instructions on setting up Co
 ## PHP from command line check
 In addition to running PHP on a server, you can also run PHP from command line. Composer uses PHP from command line, so we want to first get on the same page with *which* installation of PHP command line is using in order to understand what version of PHP we're using, what modules we have available, etc.
 
-We want PHP from command line to use MAMP's installation of PHP, located at: `/Applications/MAMP/bin/php/php7.2.1/bin/`
+We want PHP from command line to use MAMP's installation of PHP, located at: `/Applications/MAMP/bin/php/php7.2.7/bin/`
 
 This is accomplished by adding the above paths to your PATH variable. __For complete instructions on what the PATH variable is and how to edit it, read: [PATH Variables](/command-line/path.md).__
 
@@ -24,20 +24,19 @@ __Expectations:__
 
 ```xml
 $ which php
-/Applications/MAMP/bin/php/php7.2.1/bin/php
+/Applications/MAMP/bin/php/php7.2.7/bin/php
 ```
 
 ```xml
-$ php -v
-PHP 7.2.1 (cli) (built: Jan 15 2018 12:20:50) ( NTS )
-Copyright (c) 1997-2017 The PHP Group
-Zend Engine v3.2.0, Copyright (c) 1998-2017 Zend Technologies
+PHP 7.2.7 (cli) (built: Jul 17 2018 11:26:48) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 ```
 
 ```xml
 $ php --ini
-Configuration File (php.ini) Path: /Applications/MAMP/bin/php/php7.2.1/conf
-Loaded Configuration File:         /Library/Application Support/appsolute/MAMP PRO/conf/php7.2.1.ini
+Configuration File (php.ini) Path: /Applications/MAMP/bin/php/php7.2.7/conf
+Loaded Configuration File:         /Library/Application Support/appsolute/MAMP PRO/conf/php7.2.7.ini
 Scan for additional .ini files in: (none)
 Additional .ini files parsed:      (none)
 ```

@@ -30,9 +30,9 @@ C:\xampp\php\php.exe
 
 ```xml
 $ php -v
-PHP 7.2.1 (cli) (built: Jan  4 2018 04:29:12) ( ZTS MSVC15 (Visual C++ 2017) x86 )
-Copyright (c) 1997-2017 The PHP Group
-Zend Engine v3.2.0, Copyright (c) 1998-2017 Zend Technologies
+PHP 7.2.9 (cli) (built: Aug 15 2018 23:29:19) ( ZTS MSVC15 (Visual C++ 2017) x86 )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 ```
 
 ```xml
@@ -54,9 +54,9 @@ Make sure the `php.exe` path on the **second screen** matches the same XAMPP php
 [Enlarge...](http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png)
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-composer-install-on-windows@2x.png' class='' style='max-width:1252px; width:100%' alt='Composer installation on Windows'>
 
-When the installer is complete, **close and restart Cmder**.
+When the installer is complete, **close and restart Cmder**. If you do not restart Cmder, it will not recognize that Composer has been installed.
 
-Now, you should be able to run the `composer` command from within any directory. This works because the installer updated your PATH variable for you.
+When Cmder re-opens, you should be able to run the `composer` command from within any directory. This works because the installer updated your PATH variable for you, making `composer` available.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-windows-composer-confirm@2x.png' class='' style='max-width:537px; width:100%' alt=''>
 
