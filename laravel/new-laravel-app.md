@@ -126,13 +126,18 @@ Then, on Github.com, create a new repository. When doing this, do *not* initiali
 
 Note the Github SSH URL, for example, `git@github.com:username/foobooks`
 
-Back in your application directory, add a new remote origin called `origin`, that is set to the Github SSH path:
+Back in your application directory, add a new remote connection called `origin`, that is set to the Github SSH path:
 
 ```bash
 $ git remote add origin git@github.com:username/foobooks.git
 ```
 
-You now have a git tracked application locally, that is connected to a repository on Github.
+Next, run this command so that git will use the remote `origin` and the branch `master` by default:
+```bash
+$ git push --set-upstream origin master
+```
+
+You now have a git tracked application that is connected to a repository on Github.
 
 
 
@@ -158,7 +163,7 @@ $ git commit -m "First commit"
 Push your project to Github:
 
 ```bash
-$ git push origin master
+$ git push
 ```
 
 When you visit your repository on Github you should see all your changes there.
@@ -176,7 +181,7 @@ If Composer is downloading an older version of Laravel than you're expecting, it
 
 Confirm by running `php --version`
 
-It should report back >= 7.2.1.
+It should report back >= 7.2.7.
 
 If it's less than this, you may get an older version of Laravel. Revisit the Composer setup notes ([Mac](/laravel/composer-mac.md)/[Windows](/laravel/composer-windows.md) where it talks about checking/setting your PHP version in Command Line.
 
