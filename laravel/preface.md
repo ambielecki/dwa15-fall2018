@@ -26,9 +26,11 @@ Moving forward, we'll rely on a framework to provide a lot of this functionality
 + Often powered with JS templating libraries like AngularJS, Vue.js, Ember.js
 + __Examples:__ [Trello (to-do manager)](https://trello.com/b/StETuJLh/demo), Gmail, Facebook
 
-Examples listed above are chosen because they *mostly* demonstrate the given approach; often times a site may use a hybrid of both approaches. There's no one best approach&mdash; it depends on the needs of your application.
+Examples listed above are chosen because they *mostly* demonstrate the given approach; oftentimes a site may use a hybrid of both approaches. There's no one best approach&mdash; it depends on the needs of your application.
 
-In this course, __we'll build our applications using Approach 1__, but know that the work we're doing has a lot of overlap with techniques you'd use when building a SPA. If you wish to explore SPA's after this course I recommend checking out the following:
+In this course, __we'll build our applications using Approach 1__, but know that the work we're doing has overlap with techniques you'd use when building a SPA, especially when programming the server-side API for your SPA.
+
+If you wish to explore SPA's after this course I recommend checking out the following:
 
 + [Lumen](https://lumen.laravel.com) a &ldquo;light&rdquo; version of Laravel can be used as your server API
 + [Vue](https://vuejs.org) JavaScript framework for building interfaces

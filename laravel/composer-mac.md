@@ -1,6 +1,3 @@
-
-**Spring 2018**: Before completing these instructions, Mac users need to update to the latest version of MAMP as it includes an updated version of PHP (v7.2.1) which we'll need. To do that, [read this post in the Issues forum...](https://github.com/susanBuck/dwa15-spring2018/issues/12).
-
 # Composer setup on Mac
 
 These instructions are for Mac users; [for Windows instructions on setting up Composer, go here...](/laravel/composer-windows.md)
