@@ -7,8 +7,7 @@ In these notes, we'll do the following:
 
 1. Enable a swap file for more memory
 2. Install Composer
-3. Update PHP, install some necessary modules
-3. Enable `mod_rewrite`
+3. Install some necessary modules and enable `mod_rewrite`
 
 Tip: This note set includes some complex command line commands, each prefixed with a brief explanation of what the command does. To break down any one particular command to learn more, paste the command into <https://explainshell.com>.
 
