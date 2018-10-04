@@ -94,19 +94,6 @@ You should see something similar to this output (except the version # will refle
 
 ## Common problems
 
-### Issue: openssl
-
-__Symptoms:__ You get a message saying *openssl* is not enabled.
-
-__Solution:__ Identify what `php.ini` file you're using with this command:
-
-	$ php --ini
-
-Open the indicated `php.ini` file and make sure the following line is not commented out (i.e. it does *not* have a semi-colon in front of it):
-
-	extension=php_openssl.dll
-
-
 ### Issue: SSL Certificate problem
 
 __Symptoms:__ When downloading Composer (via the `curl -sS https://getcomposer.org/installer | php` command), you receive an error regarding SSL certificates:
