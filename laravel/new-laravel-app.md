@@ -132,11 +132,6 @@ Back in your application directory, add a new remote connection called `origin`,
 $ git remote add origin git@github.com:username/foobooks.git
 ```
 
-Next, run this command so that git will use the remote `origin` and the branch `master` by default:
-```bash
-$ git push --set-upstream origin master
-```
-
 You now have a git tracked application that is connected to a repository on Github.
 
 
@@ -160,10 +155,10 @@ Commit these changes:
 $ git commit -m "First commit"
 ```
 
-Push your project to Github:
+Push your project to Github; note we're adding the flag `--set-upstream origin master` which makes it so that the `origin` remote and `master` branch will be used by default when pushing to this repository. Any future commits made to this project will only need to use `git push`.
 
 ```bash
-$ git push
+$ git push --set-upstream origin master
 ```
 
 When you visit your repository on Github you should see all your changes there.
