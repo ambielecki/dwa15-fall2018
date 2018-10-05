@@ -12,7 +12,7 @@ Permission denied (publickey)
 2. You created a new Droplet and *then* you added a new SSH key your DigitalOcean settings. Keys you save in settings are only added to *new* droplets.
 3. There was some mistake in the copying/pasting of keys.
 
-If you've just created the Droplet, the quickest way to resolve this problem is just to destroy the droplet and create a new one.
+If you've just created the Droplet, the quickest way to resolve this problem is to start over: destroy the Droplet and create a new one. Before you do this, make sure you have the SSH key saved in your DigitalOcean settings, and make sure that key is chosen when you create the new Droplet.
 
 If you've had the Droplet for a while, you obviously don't want to start over, so you'll need to run through the following instructions.
 
@@ -30,7 +30,7 @@ Next, also from within *Access* in DigitalOcean, click *Launch Console* (this wi
 
 When it asks for your login name, type __root__.
 
-When it asks for your password, type in the password that was in the email. In my experience you have to type the password in, you can't copy and paste it.
+When it asks for your password, type in the password that was in the email. (In my experience you have to type the password in, you can't copy and paste it.)
 
 It will ask you to change the password. Choose a new password.
 
@@ -79,10 +79,16 @@ Run `exit` to disconnect from your server. We want to go back to your local mach
 
 
 ## Step 4) Fix SSH keys
-On your local machine, run the following command, replacing `your.digital.ocean.ip.address`. (This command assumes your public key is named `dwa.pub`; if it's something else, make that edit as well.)
+On your local machine, run one of the following commands, replacing `your.digital.ocean.ip.address`. (This command assumes your public key is named `dwa.pub`; if it's something else, make that edit as well.)
 
+Mac:
 ```
 cat ~/.ssh/dwa.pub | ssh root@your.digital.ocean.ip.address "cat >> ~/.ssh/authorized_keys"
+```
+
+Windows:
+```
+cat %home%\.ssh\dwa.pub | ssh root@your.digital.ocean.ip.address "cat >> ~/.ssh/authorized_keys"
 ```
 
 This will take a copy of your local public key (`~/.ssh/dwa.pub`) and put it in your `authorized_keys` file on the server.
@@ -96,6 +102,8 @@ ssh root@your.digital.ocean.ip.address
 ```
 
 If all went well, you should immediately be logged in, without any password required.
+
+**Tip: If at any point you want to see what public keys have been added to your server, view the contents of the abovementioned `~/.ssh/authorized_keys` file.**
 
 ## Step 5) Cleanup
 Now that you can SSH in from your local machine again, you  may choose to undo what you did in Step 2 above, disabling password login. It's a more secure option, but isn't necessary.
