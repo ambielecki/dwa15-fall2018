@@ -202,6 +202,15 @@ Apache error and configuration files on DigitalOcean:
 + Apache error log: `/var/log/apache2/error.log`
 + Apache configuration: `/etc/apache2/httpd.conf`
 
+### Adding new SSH keys to DigitalOcean
+Note that if you add new SSH keys to your security settings in DigitalOcean, those keys will *not* be added to any existing Droplets; they only can be added when creating a new Droplet.
+
+To add new SSH keys to an existing Droplet, they have to be pasted into the file `~/.ssh/authorized_keys` on the server.
+
+If you are unable to SSH into your server because your keys are not working, it will obviously be difficult to access that file. 
+
+In that situation, you should read [these instructions](/servers-and-git/permission-denied-public-key.md) which explain how to enable password login authentication, which will give you access to your server to fix or modify your SSH keys stored in `~/.ssh/authorized_keys`.
+
 
 ### Permission denied (publickey)
 If you are unable to SSH into your server and receive the following message:
