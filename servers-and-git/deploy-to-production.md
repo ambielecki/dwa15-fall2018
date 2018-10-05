@@ -203,7 +203,7 @@ Apache error and configuration files on DigitalOcean:
 + Apache configuration: `/etc/apache2/httpd.conf`
 
 ### Adding new SSH keys to DigitalOcean
-Note that if you add new SSH keys to your security settings in DigitalOcean, those keys will *not* be added to any existing Droplets; they only can be added when creating a new Droplet.
+Note that if you add new SSH keys to your security settings in DigitalOcean, those keys will *not* be added to any existing Droplets; they can only be added when creating a new Droplet.
 
 To add new SSH keys to an existing Droplet, they have to be pasted into the file `~/.ssh/authorized_keys` on the server.
 
