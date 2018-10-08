@@ -104,7 +104,7 @@ Ref:
 ## Set up .env file on production
 Like the `vendors/` folder, the `.env` file is also listed in `.gitignore` so it's also excluded from version control. Because of this, you need to manually create a `.env` file on your live server in order for your application to work there.
 
-This can be done by copying the provided `.env.example.env` file to `.env`
+This can be done by copying the provided `.env.example` file to `.env`
 
 ```xml
 $ cp .env.example .env
