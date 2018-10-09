@@ -153,7 +153,7 @@ Save your work then test it out by visiting `http://foobooks.loc/example`; you s
 
 
 ## Example 3: Test a non-existent route
-Observe what happens when you visit a route that has not be defined, for example, http://foobooks.loc/xyz.
+Observe what happens when you visit a route that has not be defined, for example, `http://foobooks.loc/xyz`.
 <img src='https://s3.amazonaws.com/making-the-internet//laravel-route-not-found@2x.png' style='max-width:1055px;' alt=''>
 
 

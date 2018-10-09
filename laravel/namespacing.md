@@ -9,12 +9,13 @@ Autoloading is a feature PHP has which makes it possible to invoke classes in yo
 
 In order for autoloading to work, you have to first give your autoloading function some details about *where* to find your classes.
 
-In Laravel, there's some autoloading configured in `composer.json` :
+In Laravel, some of the autoloading is configured in `composer.json` :
 
 ```json
-"autoload": {
+ "autoload": {
     "classmap": [
-        "database"
+        "database/seeds",
+        "database/factories"
     ],
     "psr-4": {
         "App\\": "app/"
@@ -48,7 +49,7 @@ class Message() {
 
 
 ## PSR-4 in Laravel
-Looking at `composer.json` in Laravel 5 we see this PSR-4 setting:
+Looking at `composer.json` in Laravel we see this PSR-4 setting:
 
 ```json
 "psr-4": {
@@ -76,15 +77,17 @@ And the path to the file corresponds at:
 app/Http/Controllers/BookController.php
 ```
 
-The `app` folder is just one of the folders that is PSR-4 autoloaded in Laravel.
-
-There's more autoloading going on under the hood by default with Composer&mdash; for example everything in the `/vendor` directory is autoloaded.
+Note that the autoloading config we see in `composer.json` is just a fraction of the autoloading configs our Laravel applications actually uses, and it's isolated to the components of our application that we will actually edit. There is more autoloading happening behind the scenes that pulls in all the many classes that run the framework.
 
 
+## Manually adding new classes - `composer dump-autoload`
+When you manually add new classes to your application in either the `psr-4` or `classmap` specified directories, you need to run the command `composer dump-autoload` so that Composer will recognize the addition of the new class.
+
+When we added new controllers, we did skip the `composer dump-autoload` step, but only because the `php artisan make` commands invokes it for us automatically.
 
 
 ## Summary
-Namespacing...
-
-1. helps avoid name collisions.
-2. helps power autoloading by mapping namespaced class names to file paths.
+1. Namespacing helps avoid name collisions
+2. Namespacing facilitates autoloading by mapping namespaced class names to file paths
+3. Every class in the `app` directory is autoloaded so they can be invoked without explicitly requiring them
+4. Run `composer dump-autoload` after manually adding new classes

@@ -66,7 +66,7 @@ $currentEnvironment = App::environment();
 ```
 
 ## Philosophy behind the use of facades
->> *[Laravel facades] provide the benefit of a terse, expressive syntax while maintaining more testability and flexibility than traditional static methods.* -[src](http://laravel.com/docs/facades#facade-class-reference)
+>> *[Laravel facades] provide the benefit of a terse, expressive syntax while maintaining more testability and flexibility than traditional static methods.* -[src](http://laravel.com/docs/facades)
 
 
 ## Facades and their classes
@@ -123,7 +123,8 @@ php artisan ide-helper:generate
 This will generate a new file called `_ide_helper.php` in the root of your project which PhpStorm will utilize.
 
 
-__Test it__
+__Test it...__
+
 If you close and re-open `routes/web.php` it should no longer be flagging `Route`, and you'll also notice that when you create new routes PhpStorm will assist you with auto-completion.
 
 <img src='https://s3.amazonaws.com/making-the-internet/laravel-route-auto-completion@2x.png' style='max-width:769px;' alt='Route auto-completion in PhpStorm'>

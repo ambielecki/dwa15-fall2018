@@ -85,5 +85,4 @@ After making these changes, visit `http://foobooks.loc/books` to make sure it's 
 ## Summary
 Controllers provide a way to organize your application into logical parts. As we progress, we'll add all book related actions (add a book, edit a book, etc.) to the `BookController`.
 
-Eventually, we'll need new controllers, for example an `AuthorController`.
-
+As applications grow in complexity, you can/should organize them via multiple controller files. For example, eventually our Foobooks app will have the ability to add/edit/view authors, and to handle that functionality we would add an `AuthorController`.

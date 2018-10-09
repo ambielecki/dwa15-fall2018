@@ -14,7 +14,7 @@ In addition to `get`, the `Route` class also has methods for the following [HTTP
 3. PUT
 4. DELETE
 
-Looking at the [API documentation for Route's `get` method](https://laravel.com/api/5.6/Illuminate/Routing/Router.html#method_get), we see the following information:
+Looking at the [API documentation for Route's `get` method](https://laravel.com/api/5.7/Illuminate/Routing/Router.html#method_get), we see the following information:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-router-get-function-signature@2x.png' style='max-width:982px;' alt=''>
 
@@ -28,7 +28,7 @@ Knowing this, we can breakdown our examples so far like so:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-route-breakdown@2x.png' class='' style='max-width:545px; width:100%' alt='Route breakdown'>
 
-If you're curious what a Closure is...
+If you're unfamiliar with closures...
 
 >> &ldquo;*Anonymous functions, also known as closures, allow the creation of functions which have no specified name. They are most useful as the value of callback parameters, but they have many other uses.*&rdquo; ([src](http://us2.php.net/manual/en/functions.anonymous.php))
 
