@@ -11,43 +11,45 @@ These instructions are for Mac users; [for Windows instructions on setting up Co
 ## PHP from command line check
 In addition to running PHP on a server, you can also run PHP from command line. Composer uses PHP from command line, so we want to first get on the same page with *which* installation of PHP command line is using in order to understand what version of PHP we're using, what modules we have available, etc.
 
-We want PHP from command line to use MAMP's installation of PHP, located at: `/Applications/MAMP/bin/php/php7.2.7/bin/`
-
-This is accomplished by adding the above paths to your PATH variable. __For complete instructions on what the PATH variable is and how to edit it, read: [PATH Variables](/command-line/path.md).__
-
-Once you've completed the above linked instructions, you should confirm that...
-
-1. You can run `php` from the command line.
-2. The command `php` is using the PHP executable that comes installed with MAMP/XAMPP.
-
-__Expectations:__
+You can see info about which php executable command line is using by running the following commands:
 
 ```xml
 $ which php
-/Applications/MAMP/bin/php/php7.2.7/bin/php
+/Applications/MAMP/bin/php/php7.2.x/bin/php
 ```
 
 ```xml
-PHP 7.2.7 (cli) (built: Jul 17 2018 11:26:48) ( NTS )
+$ php --version
+PHP 7.2.x (cli) (built: Jul 17 2018 11:26:48) ( NTS )
 Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 ```
 
 ```xml
 $ php --ini
-Configuration File (php.ini) Path: /Applications/MAMP/bin/php/php7.2.7/conf
-Loaded Configuration File:         /Library/Application Support/appsolute/MAMP PRO/conf/php7.2.7.ini
+Configuration File (php.ini) Path: /Applications/MAMP/bin/php/php7.2.x/conf
+Loaded Configuration File:         /Library/Application Support/appsolute/MAMP PRO/conf/php7.2.x.ini
 Scan for additional .ini files in: (none)
 Additional .ini files parsed:      (none)
 ```
 
-## Installing Composer on Mac
-*Note: In the following steps, we'll be prefixing most of our commands with `sudo` which will run the commands as an administrator. Depending on your system, this might not be necessary, but it won't hurt to include it.*
+This info should reflect an installation of PHP found in `/Applications/MAMP/bin/php/` and at version >= 7.2. 
 
+**If the output you see reflects something different [follow these instructions to update your 
+PATH variable](/command-line/path.md)**
+
+Before continuing confirm that:
+
+1. You can run `php` from the command line.
+2. The command `php` is using the latest PHP executable that comes installed with MAMP.
+
+
+
+## Installing Composer on Mac
 Move into your `/usr/local/bin` directory. This is a common location to put command line executable programs, so we'll install Composer here.
 
 ```xml
-$ sudo cd /usr/local/bin
+$ cd /usr/local/bin
 ```
 
 Note: On some versions of OSX the `/usr` directory does not exist by default. If you receive the error */usr/local/bin: No such file or directory* then you must create the directory manually using this command
