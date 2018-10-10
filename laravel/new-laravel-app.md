@@ -176,7 +176,7 @@ If Composer is downloading an older version of Laravel than you're expecting, it
 
 Confirm by running `php --version`
 
-It should report back >= 7.2.7.
+It should report back >= 7.2.x.
 
 If it's less than this, you may get an older version of Laravel. Revisit the Composer setup notes ([Mac](/laravel/composer-mac.md)/[Windows](/laravel/composer-windows.md) where it talks about checking/setting your PHP version in Command Line.
 
