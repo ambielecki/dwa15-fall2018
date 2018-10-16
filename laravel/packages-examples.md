@@ -53,14 +53,13 @@ use Debugbar; # <-- Add this use statement at the top of your controller
 
 public function practiceX()
 {
-    $data = ['foo' => 'bar'];
-    Debugbar::info($data);
-    Debugbar::info('Current environment: '.App::environment());
-    Debugbar::error('Error!');
-    Debugbar::warning('Watch out…');
-    Debugbar::addMessage('Another message', 'mylabel');
+   Debugbar::info(config('mail'));
+   Debugbar::info('App timezone: ' . config('app.timezone'));
+   Debugbar::error('Error!');
+   Debugbar::warning('Watch out…');
+   Debugbar::addMessage(config('mail.supportEmail'), 'Support email');
 
-    return 'Demoing some of the features of Debugbar';
+   return 'Demoing some of the features of Debugbar';
 }
 ```
 
