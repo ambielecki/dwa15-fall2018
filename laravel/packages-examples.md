@@ -43,56 +43,13 @@ Load any page in your app to test it out.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-debug-bar-open@2x.png' style='max-width:1000pxpx; width:100%' alt=''>
 
-### Debugbar messages
-Further down in the Debugbar documentation, there's some *Usage* examples where it demonstrates outputting different kinds of message to the Debugbar.
-
-Let's take those instructions and test them out via our practice controller:
-
-```php
-use Debugbar; # <-- Add this use statement at the top of your controller
-
-public function practiceX()
-{
-   Debugbar::info(config('mail'));
-   Debugbar::info('App timezone: ' . config('app.timezone'));
-   Debugbar::error('Error!');
-   Debugbar::warning('Watch out…');
-   Debugbar::addMessage(config('mail.supportEmail'), 'Support email');
-
-   return 'Demoing some of the features of Debugbar';
-}
-```
-
-When you run this code, if you look at the **Messages** tab of the debug bar, you should see the various outputs:
-
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-messages-in-debugbar@2x.png' style='max-width:1000px; width:100%' alt=''>
-
-Being able to output messages like this can be useful when building and debugging your applications.
-
-### PhpStorm tip
-You'll notice PhpStorm flagging Debugbar as unrecognized. To fix this, you can run `php artisan ide-helper:generate` to update the classes that ide-helpers sees ([ref](https://github.com/barryvdh/laravel-ide-helper#automatic-phpdoc-generation-for-laravel-facades)). 
-
-Better yet, you can add the following code to the `scripts` section in `composer.json` which will complete this step for you whenever you add a new package.
-
-```json
-"post-update-cmd": [
-    "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-    "php artisan ide-helper:generate",
-    "php artisan ide-helper:meta"
-]
-```
-
 ### Debugbar should not run on production
-We don't want to run Debugbar on production which is why it was installed in the `require-dev` section of your `composer.json` file.
+Debugbar is a tool we use when developing our application locally, as it provides useful insight into information about our app.
+
+This information is not something we need/want our visitors to see, so there's no reason Debugbar should ever run on production. This is why we installed this package in the `require-dev` section of the `composer.json` file.
 
 To make sure Debugbar is not installed on production, remember that you should be using the `--no-dev` flag when invoking composer on production: `composer install --no-dev`.
 
-Also, make sure that your `.env` file on production has the appropriate settings for `APP_ENV` and `APP_DEBUG`:
-
-```
-APP_ENV=production
-APP_DEBUG=false
-```
 
 
 ## ianlchapman/pig-latin-translator
