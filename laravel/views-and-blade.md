@@ -175,7 +175,7 @@ For an example, let's imagine the *Show a book* page needed to accommodate a sit
 
 ```html
 <section>
-  @if(isset($title)
+  @if(isset($title))
       <h1>{{ $title }}</h1>
 
       <p>
@@ -197,4 +197,5 @@ When you load a view, the Blade templating engine converts any Blade syntax into
 
 Open any of the files in `/storage/framework/views/` to see an example of a rendered view from the examples we ran above.
 
+When you have bugs in your views, the Laravel *whoops* error page may reference the code in the rendered/cached version of your view, *not* the original Blade file. Given this, you may have to occasionally refer to these cache files to track down where a problem is.
 
