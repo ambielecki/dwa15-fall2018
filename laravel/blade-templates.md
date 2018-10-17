@@ -5,7 +5,7 @@ A better solution is to divide your views into __layout templates__ and __child 
 
 This is called __template inheritance__ and an example is conveyed in this graphic:
 
-<img src='https://s3.amazonaws.com/making-the-internet/laravel-view-inheritance@2x.png' style='max-width:792px;' alt=''>
+<img src='https://s3.amazonaws.com/making-the-internet/laravel-view-inheritance@2x.png' style='max-width:801px;' alt='Template inheritance'>
 
 With template inheritance you create a __master layout__ view (figure a) that contains common, shared parts that similar HTML files/views will need. For example, the doctype, the `<head>`, CSS and JavaScript includes, menus, footers, etc. 
 
@@ -23,11 +23,10 @@ In this new file, add these contents:
 <!doctype html>
 <html lang='en'>
 <head>
-    <title>@yield('title', 'Foobooks')</title>
+    <title>@yield('title', config('app.name'))</title>
     <meta charset='utf-8'>
     
     {{-- CSS global to every page can be loaded here --}}
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
     <link href='/css/foobooks.css' rel='stylesheet'>
 
     {{-- CSS specific to a given page/child view can be included via a stack --}}
@@ -47,7 +46,7 @@ In this new file, add these contents:
     &copy; {{ date('Y') }}
 </footer>
 
-{{-- JS global to every page can be loaded here --}}
+{{-- JS global to every page can be loaded here; jQuery included just as an example --}}
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'></script>
 
 {{-- JS specific to a given page/child view can be included via a stack --}}
@@ -90,7 +89,6 @@ Run `http://foobooks.loc/books/war-and-peace` in your browser and test everythin
 
 
 ## External CSS/JS Includes
-+ In the master template, the Bootstrap CSS and JS was included just as an example of where you include external asset files.
 + The master layout has a `@stack('head')` and `@stack('body')` which allows the child views to define external CSS and/or JS includes specific to that child view.
 + The `@stack('head')` is positioned where you'd typically find page-specific CSS includes&mdash; after global CSS includes and before the closing `</head>` tag.
 + The `@stack('body')` is positioned where you'd typically find page-specific JS includes&mdash; after global JS includes and before the closing `</body>` tag.

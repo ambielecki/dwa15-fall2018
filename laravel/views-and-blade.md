@@ -89,7 +89,7 @@ So when you use Blade syntax like this...
 {{ $title }}
 ```
 
-...the Blade templating engine will translate that code to this:
+...the Blade templating engine will translate that a PHP echo statement similar to this:
 ```php
 <?php echo $title; ?>
 ```
