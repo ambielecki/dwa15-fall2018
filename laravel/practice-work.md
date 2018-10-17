@@ -28,7 +28,10 @@ Route::get('/practice', function () {
 ## Option 2: Practice controller
 Create a controller dedicated to practice work, `PracticeController.php`, with a dynamic route to access the individual methods. This is what I'll do for lecture.
 
-Refer to foobooks' [routes/web.php](https://github.com/susanBuck/foobooks/blob/master/routes/web.php) and [/app/Http/Controllers/PracticeController.php](https://github.com/susanBuck/foobooks/blob/master/app/Http/Controllers/PracticeController.php) to see how it's set up.
+Refer to the following foobooks' files to see how it's set up:
++ [/routes/web.php](https://github.com/susanBuck/foobooks/blob/master/routes/web.php)
++ [/app/Http/Controllers/PracticeController.php](https://github.com/susanBuck/foobooks/blob/master/app/Http/Controllers/PracticeController.php)  
++ [/resources/views/practice.blade.php](https://github.com/susanBuck/foobooks/blob/master/resources/views/practice.blade.php)
 
 + __Pros:__ It's convenient, and we'll have a running history of examples in PracticeController to be tracked in Github so they're available for your reference.
 + __Cons:__ None
