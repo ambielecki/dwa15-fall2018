@@ -197,5 +197,4 @@ When you load a view, the Blade templating engine converts any Blade syntax into
 
 Open any of the files in `/storage/framework/views/` to see an example of a rendered view from the examples we ran above.
 
-When you have bugs in your views, the Laravel whoops page will reference the code in the rendered/cached version of your view, *not* the original blade file. Given this, you may have to occasionally refer to these cache files to track down where a problem is.
 
