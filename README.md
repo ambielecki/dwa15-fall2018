@@ -37,7 +37,7 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
         + [New app cheat sheet](/servers-and-git/new-app-cheat-sheet.md)
         + [Increasing server security](/servers-and-git/increasing-server-security.md)
         + [DigitalOcean: Permission Denied (publickey)](servers-and-git/permission-denied-public-key.md)
-        + Deployment script
+        + [Deployment script](servers-and-git/deployment-script.md)
         + [HTTPS/SSL](/servers-and-git/https-ssl.md)
 + PHP
     + [Intro](/php/intro.md)
