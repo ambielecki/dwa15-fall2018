@@ -4,7 +4,7 @@ The following is a list of commonly used Blade directives. This list is not comp
 ### Basic output
 + `{{ $x }}` - Echo content
 + `{!! $x !!}` - Echo content without escaping special characters
-+ `{{ $x or 'default' }}` - Echo content with a default value
++ `{{ $x ?? 'default' }}` - Echo content with a default value
 
 ### Template inheritance
 + `@extends('x')` - Extends a view template called `x`
