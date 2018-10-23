@@ -148,7 +148,7 @@ public function searchProcess(Request $request) {
     dump($request->path()); # "books/search-process"
     dump($request->is('books/search-process')); # True
     dump($request->is('search')); # False
-    dump($request->fullUrl()); # http://foobooks.loc/books/search
+    dump($request->fullUrl()); # e.g. http://foobooks.loc/books/search-process?searchTerm=abc
     dump($request->method()); # GET
     dump($request->isMethod('post')); # False
 
@@ -239,9 +239,9 @@ and make it available to the view so we can display any results. This is done vi
 public function search(Request $request)
 {
     return view('books.search')->with([
-        'searchTerm' => $request->session()->get('searchTerm') ?? '',
-        'caseSensitive' => $request->session()->has('caseSensitive'),
-        'searchResults' => $request->session()->get('searchResults') ?? '',
+        'searchTerm' => $request->session()->get('searchTerm', ''),
+        'caseSensitive' => $request->session()->get('caseSensitive', false),
+        'searchResults' => $request->session()->get('searchResults', []),
     ]);
 }
 ```
@@ -279,7 +279,7 @@ To retain the data in your form inputs after submission, update the `value` attr
 
 And update your `caseSensitive` checkbox to look like this:
 ```html
-<input type='checkbox' name='caseSensitive' {{ ($caseSensitive) ? 'CHECKED' : '' }} >
+<input type='checkbox' name='caseSensitive' {{ ($caseSensitive) ? 'checked' : '' }} >
 ```
 
 
@@ -291,7 +291,7 @@ Note that no where in the above examples did I explicitly sanitize/escape any vi
 This is because Blade takes care of this for us when using the [`{{ }}` echo shortcuts](https://laravel.com/docs/blade#displaying-data) which invoke Laravel's [`e` (escape) helper method](https://laravel.com/docs/helpers#method-e).
 
 ### Flash data
-Data flashed to the session as part of a redirect only exists for a single request (hence the name, *flashed*). Thus, if you submit the form, see the results, then refresh the page - you would no longer see any results. If you wish to retain data for longer than a single request you'd want to explicitly set the data in the session instead of flashing it as part of the redirect. More info here: [HTTP Session: Using the session](https://laravel.com/docs/5.7/session#using-the-session)
+Data flashed to the session as part of a redirect only exists for a single request (hence the name, *flashed*). Thus, if you submit the form, see the results, then refresh the page - you would no longer see any results. If you wish to retain data for longer than a single request you'd want to explicitly set the data in the session instead of flashing it as part of the redirect. More info here: [HTTP Session: Using the session](https://laravel.com/docs/session#using-the-session)
  
 
 
