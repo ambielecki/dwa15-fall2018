@@ -52,7 +52,7 @@ Route::post('/books', 'BookController@store');
 ### Controller actions
 ```php
 /**
-* GET /books/new
+* GET /books/create
 * Display the form to add a new book
 */
 public function create(Request $request) 
