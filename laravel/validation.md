@@ -14,14 +14,14 @@ As a demonstration, we'll add validation to our *Add a book* feature.
 */
 public function store(Request $request) {
 
-    # Validate the request data
-    $this->validate($request, [
-        'title' => 'required',
-        'author' => 'required',
-        'published_year' => 'required|digits:4',
-        'cover_url' => 'required|url',
-        'purchase_url' => 'required|url'
-    ]);
+   # Validate the request data
+   $request->validate([
+       'title' => 'required',
+       'author' => 'required',
+       'published_year' => 'required|digits:4',
+       'cover_url' => 'required|url',
+       'purchase_url' => 'required|url'
+   ]);
 
     # Note: If validation fails, it will redirect the visitor back to the form page
     # and none of the code that follows will execute.
@@ -56,24 +56,16 @@ Given this, you can display errors in your view like so:
             <li>{{ $error }}</li>
         @endforeach
     </ul>
-@endif
-
-<h1>Add a book</h1>
-
-{{-- Form to add book here --}}
+@endi
 ```
 
 In the above example, we're using the `all` method on `$errors`, one of many methods available when dealing with the error MessageBag.
 
-Alternatively, if we wanted *just* the errors related to, for example, the title field, you could write:
+Alternatively, if we wanted *just* the errors related to a specific field you could write something like this:
 
 ```html
 @if($errors->get('title'))
-    <ul>
-        @foreach($errors->get('title') as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
+    <div class='error'>{{ $errors->first('title') }}</div>
 @endif
 ```
 
