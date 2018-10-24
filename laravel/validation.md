@@ -56,7 +56,7 @@ Given this, you can display errors in your view like so:
             <li>{{ $error }}</li>
         @endforeach
     </ul>
-@endi
+@endif
 ```
 
 In the above example, we're using the `all` method on `$errors`, one of many methods available when dealing with the error MessageBag.
