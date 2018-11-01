@@ -89,3 +89,5 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + [Forms GET](/laravel/forms-get.md)
     + [Forms POST](/laravel/forms-post.md)
     + [Validation](/laravel/validation.md)
+    + Extras
+        + [Laravel and PhpStorm](/laravel/laravel-and-phpstorm.md)
