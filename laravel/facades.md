@@ -90,43 +90,11 @@ $timezone = config('app.timezone');
 [See a full list of available helper functions here...](https://laravel.com/docs/helpers)
 
 
-## Laravel IDE Helper
+## Fix "Undefined class Route"
 The usage of facades are convenient, but they make it harder for PhpStorm to assist you when writing code in regards to auto-completion and providing context about the classes you're using. For example, here's PhpStorm flagging `Route` as an undefined class:
 
 <img src='https://s3.amazonaws.com/making-the-internet/laravel-undefined-class-route@2x.png' style='max-width:456px;' alt='Undefined class route'>
 
 The problem here is not that Route is undefined, it's that PhpStorm is unable to decipher *how* it's defined.
 
-To fix this issue, we can add a new package to our projects called [laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper).
-
-
-__Step 1)__ In command line, while in the root of your project, run the following command:
-
-```bash
-composer require --dev barryvdh/laravel-ide-helper
-```
-
-__Step 2)__ In `app/Providers/AppServiceProvider.php` within the `register` method, add this code:
-
-```php
-if ($this->app->environment() !== 'production') {
-    $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
-}
-```
-
-__Step 3)__ Run the following command:
-
-```php
-php artisan ide-helper:generate
-```
-
-This will generate a new file called `_ide_helper.php` in the root of your project which PhpStorm will utilize.
-
-
-__Test it...__
-
-If you close and re-open `routes/web.php` it should no longer be flagging `Route`, and you'll also notice that when you create new routes PhpStorm will assist you with auto-completion.
-
-<img src='https://s3.amazonaws.com/making-the-internet/laravel-route-auto-completion@2x.png' style='max-width:769px;' alt='Route auto-completion in PhpStorm'>
-
-
+To fix this issue, follow the notes here: [Make PhpStorm Laravel friendly](/laravel/laravel-and-phpstorm.md).

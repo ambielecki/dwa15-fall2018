@@ -1,4 +1,4 @@
-# Make PHPStorm Laravel friendly
+# Make PhpStorm Laravel friendly
 
 ## PhpStorm Laravel Plugin
 Install a plugin called *Laravel Plugin* in PhpStorm (via *Preferences* : *Plugins*).
