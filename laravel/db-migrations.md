@@ -14,7 +14,7 @@ The benefits of managing your database with migrations include...
 
 <br>
 
-**Before proceeding, use phpMyAdmin to delete the `books` table you created when reading the [*Databases Primer*](/laravel/db-primer.md) notes**
+**Before proceeding, use phpMyAdmin to delete the `books` table you created when reading the [*Databases Primer*](/laravel/db-primer.md) notes:**
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-how-to-delete-a-table-in-phpmyadmin@2x.png' style='max-width:1000px; width:100%' alt=''>
 
@@ -85,13 +85,7 @@ To do this, we'll refer to the plan we came up with in the *Database Primer* not
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-books-table-design@2x.png' style='max-width:380px; width:100%' alt='books table design'>
 
-For all our tables/columns, we'll continue to follow these naming conventions:
-
-+ Table names are plural.
-+ Tables and column names are written in `snake_case`.
-
 With the `books` table design in mind, it's time to write the migration code that will create this table.
-
 
 ## up - Build the table
 Modify the `up` method so it looks like this:
