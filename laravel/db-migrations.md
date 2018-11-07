@@ -14,7 +14,7 @@ The benefits of managing your database with migrations include...
 
 <br>
 
-**Before proceeding, if you created a `books` table when reading the *Databases Primer* notes, delete that table now.**
+**Before proceeding, use phpMyAdmin to delete the `books` table you created when reading the [*Databases Primer*](/laravel/db-primer.md) notes**
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-how-to-delete-a-table-in-phpmyadmin@2x.png' style='max-width:1000px; width:100%' alt=''>
 

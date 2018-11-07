@@ -97,7 +97,7 @@ Route::get('/debug', function () {
 
 When you visit the resulting route (`http://localhost/debug`) you should see some debugging information including a test of your database connection.
 
-<img src='http://making-the-internet.s3.amazonaws.com/laravel-database-debug-route@2x.png' style='max-width:1145px;' alt='Database debug route results'>
+<img src='http://making-the-internet.s3.amazonaws.com/laravel-database-debug-route@2x.png' style='max-width:1086px;' alt='Database debug route results'>
 
 If your database connection test fails, you have some troubleshooting to do. A collection of common issues/solutions is listed at the bottom of this document.
 
