@@ -72,7 +72,6 @@ Route::get('/debug', function () {
 
     $debug = [
         'Environment' => App::environment(),
-        'Database defaultStringLength' => Illuminate\Database\Schema\Builder::$defaultStringLength,
     ];
 
     /*
@@ -106,7 +105,7 @@ If your database connection test fails, you have some troubleshooting to do. A c
 
 
 ## Conclusions
-With your database setup and your connection confirmed, you're ready to move on to **Migrations** in order to build your tables.
+With your database setup and your connection confirmed, you're ready to move on to [**Migrations**](/laravel/migrations.md) in order to build your tables.
 
 
 ## Troubleshooting
