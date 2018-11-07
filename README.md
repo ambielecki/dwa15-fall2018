@@ -89,5 +89,10 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + [Forms GET](/laravel/forms-get.md)
     + [Forms POST](/laravel/forms-post.md)
     + [Validation](/laravel/validation.md)
+    + [Database primer](/laravel/db-primer.md)
+    + [Local database configuration](/laravel/db-local-config.md)
+    + [Migrations](/laravel/db-migrations.md)
+    + [Database conventions](/laravel/db-conventions.md)
+
     + Extras
         + [Laravel and PhpStorm](/laravel/laravel-and-phpstorm.md)

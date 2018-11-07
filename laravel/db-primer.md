@@ -120,7 +120,7 @@ This is the design we'll aim for:
 
 The above graphic was created using [dbdesigner.net](http://dbdesigner.net), a program that can be used to sketch out table designs. The third column in the graphic (`int`, `varchar(255)`, etc.) indicates the MySQL data types we plan to set for each column. Data types are specified to best optimize *how* MySQL stores the data.
 
-In lecture I will discuss the most commonly used data types, but you'll also want to read through the following:
+In lecture I will discuss the most commonly used data types, but you'll also want to read through the following to familiarize yourself with all the data types available:
 
 + [MySQL Reference Manual: Data Types](https://dev.mysql.com/doc/refman/5.7/en/data-types.html)
 + [Tutorialpoint: MySQL Data Types](https://www.tutorialspoint.com/mysql/mysql-data-types.htm)

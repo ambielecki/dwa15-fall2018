@@ -1,7 +1,7 @@
 # Local database configuration
 
 ## Starting assumptions
-+ You've already created a database, per the instructions in the *Databases Primer* notes. Our example database name is `foobooks`.
++ You've already created a database, per the instructions in the [*Databases primer*](/laravel/db-primer.md) notes. Our example database name is `foobooks`.
 + MAMP or XAMPP is open and your MySQL database server is running.
 
 <img src='http://making-the-internet.s3.amazonaws.com/mysql-running-in-xampp-and-mamp@2x.png' style='max-width:921px; width:100%' alt='MySQL running in XAMPP and MAMP'>
@@ -59,8 +59,6 @@ Note that `DB_PASSWORD` is purposefully left blank.
 
 (FYI The above values are found in `C:/xampp/passwords.txt`)
 
-After making the above changes, run `php artisan config:clear` to ensure Laravel recognizes the new configs.
-
 __Do not worry about your production database or production .env file this week. We'll address production databases in Week 11.__
 
 
@@ -95,7 +93,7 @@ Route::get('/debug', function () {
 });
 ```
 
-When you visit the resulting route (`http://localhost/debug`) you should see some debugging information including a test of your database connection.
+When you visit the resulting route (`http://foobooks.loc/debug`) you should see some debugging information including a test of your database connection.
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-database-debug-route@2x.png' style='max-width:1086px;' alt='Database debug route results'>
 
