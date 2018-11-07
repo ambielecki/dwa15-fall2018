@@ -274,8 +274,8 @@ Here's just some of the examples of the benefits Laravel provides for database i
 + Abstraction which provides the ability to easily switch between database types.
 + Automatically protects against [SQL Injection Attacks](http://imgs.xkcd.com/comics/exploits_of_a_mom.png).
 + Object mapping - the ability to easily connect the Objects of your application to rows in a table.
-+ Migrations - Scripts to manage your database tables.
-+ Seeding - Scripts to pre-fill your database tables.
++ Migrations - PHP Classes used to structure database tables.
++ Seeding - PHP Classes used to to pre-fill database tables.
 
 From this point forward we're going to look at database interaction from the perspective of Laravel which is going to abstract a lot of the SQL-related work we did above. Despite this, it's still useful to have a foundational SQL understanding so you better understand what Laravel is doing beneath the surface.
 
