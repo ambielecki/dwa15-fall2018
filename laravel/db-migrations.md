@@ -1,5 +1,33 @@
 # Migrations
 
+## Important configuration preface for XAMPP users 
+
+*Fri Nov 9 Edit: The following configuration was not shown in the lecture video, and only applies to XAMPP users.*
+
+The charset Laravel uses by default is not compatible with the version of MySQL XAMPP currently ships with.
+
+To fix this, in `/app/Providers/AppServiceProvider.php` update the `boot` method adding the following Schema line:
+
+```php
+public function boot()
+{
+    \Schema::defaultStringLength(191);
+}
+```
+
+This will fix the problem, but it will limit your string (`VARCHAR`) fields to a max of 191. This should be sufficient in most cases, but if it's not, you can switch to a `TEXT` field.
+
+If you do not complete this step, you will get the following error when complete the steps described below:
+
+```
+SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))
+``` 
+
+Ref: [Index Lengths & MySQL / MariaDB](https://laravel.com/docs/migrations#creating-indexes).
+
+
+
+## Migrations
 With your application's local database created and your connection to that database confirmed, it's time to build your tables.
 
 Rather than building tables with raw SQL queries or using a tool like phpMyAdmin, we'll use Laravel migrations.
