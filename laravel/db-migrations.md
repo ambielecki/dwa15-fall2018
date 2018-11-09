@@ -1,5 +1,3 @@
-# Migrations
-
 ## Important configuration preface for XAMPP users 
 
 *Fri Nov 9 Edit: The following configuration was not shown in the lecture video, and only applies to XAMPP users.*
@@ -27,7 +25,7 @@ Ref: [Index Lengths & MySQL / MariaDB](https://laravel.com/docs/migrations#creat
 
 
 
-## Migrations
+# Migrations
 With your application's local database created and your connection to that database confirmed, it's time to build your tables.
 
 Rather than building tables with raw SQL queries or using a tool like phpMyAdmin, we'll use Laravel migrations.
