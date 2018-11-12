@@ -93,6 +93,5 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + [Local database configuration](/laravel/db-local-config.md)
     + [Migrations](/laravel/db-migrations.md)
     + [Database conventions](/laravel/db-conventions.md)
-
     + Extras
         + [Laravel and PhpStorm](/laravel/laravel-and-phpstorm.md)
