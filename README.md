@@ -89,9 +89,17 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + [Forms GET](/laravel/forms-get.md)
     + [Forms POST](/laravel/forms-post.md)
     + [Validation](/laravel/validation.md)
+    + Extras
+        + [Laravel and PhpStorm](/laravel/laravel-and-phpstorm.md)
++ Laravel w/ databases
     + [Database primer](/laravel/db-primer.md)
     + [Local database configuration](/laravel/db-local-config.md)
     + [Migrations](/laravel/db-migrations.md)
-    + [Database conventions](/laravel/db-conventions.md)
+    + [Database conventions](/laravel/db-conventions.md)        
+    + [CRUD: Create, Read, Update, Delete](/laravel/db-crud.md)
+    + [Eloquent](/laravel/db-eloquent.md)
+    + [Query examples](/laravel/db-query-examples.md)
+    + [Seeders](/laravel/db-seeders.md)
+    + [Production database setup](/laravel/db-production.md)
     + Extras
-        + [Laravel and PhpStorm](/laravel/laravel-and-phpstorm.md)
+        + [Eloquent vs. Query Builder](laravel/db-eloquent-vs-qb.md)
