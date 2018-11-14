@@ -116,4 +116,4 @@ INSERT INTO `books` (`id`, `created_at`, `updated_at`, `title`, `author`, `publi
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-foobooks-sql-seed@2x.png' style='max-width:1343px;' alt=''>
 
-With some data to work with, proceed to the next note set.
+With some data to work with, proceed to the next note set: [Eloquent](/laravel/db-eloquent.md)

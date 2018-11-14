@@ -5,11 +5,11 @@ Database seeding is the process of entering sample/testing data into your tables
 Benefits of using seed data:
 + Good for __development environments__, where you don't have real data to work with yet.
 + Good for __testing__, so that your testing scripts have disposable data to work with.
-+ Good for __collaboration__; if another developer (or TA or instructor) clones your project they can quickly build their tables using your migrations, and fill those tables with sample data using your seeders.
++ Good for __collaboration__; when another developer (colleague, classmate, etc.) clones your project they can quickly build their tables using your migrations, and fill those tables with sample data using your seeders.
 
 We saw a quick-and-dirty example of seeding the `books` table at the start of the Eloquent notes when you ran raw SQL in phpMyAdmin to enter some books.
 
-This works, but a better way of managing seed data is via scripts called __seeders__.
+This works, but a better way of managing seed data is via PHP classes called __seeders__.
 
 
 ## Create your first seeder
@@ -23,7 +23,7 @@ php artisan make:seeder BooksTableSeeder
 
 This will generate a new file in `/database/seeds/BooksTableSeeder.php` which includes one method, `run`.
 
-Amend this new file adding a `use App\Book;` statement at the top so you can use the Book model to add some books.
+Add a `use App\Book;` statement at the top of this file so you can use the Book model to add some books.
 
 ```php
 <?php
