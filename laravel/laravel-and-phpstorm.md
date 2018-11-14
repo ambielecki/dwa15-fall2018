@@ -37,7 +37,7 @@ if ($this->app->environment() !== 'production') {
 }
 ```
 
-In `composer.json` in the `post-update-command` section, add the php artisan commands `ide-helper:generate`, `ide-helper:meta`, and `ide-helper:models --nowrite` like so:
+Next, in `composer.json` in the `scripts` section, add the following:
 
 ```php
 "post-update-cmd": [
@@ -48,9 +48,12 @@ In `composer.json` in the `post-update-command` section, add the php artisan com
 ]
 ```
 
-When these commands are invoked (as a result of running `composer update`), they will generate 2 new files in your application: `_ide_helper.php` and `ide_helper_models.php`. Both these files can be added/committed in version control.
+Like so:
+<img src='https://s3.amazonaws.com/making-the-internet/laravel-post-update-cmd@2x.png' style='max-width:590px;' alt=''>
 
-These files provide meta information to PhpStorm about the class structure of your app, which prevents PhpStorm from flagging certain methods as unavailable.
+This specifies a series of `ide-helper` commands to be automatically run whenever you run `composer update`. As a result of these commands, 2 new files will be generated in your application: `_ide_helper.php` and `ide_helper_models.php`. These files provide meta information to PhpStorm about the class structure of your app, which prevents PhpStorm from flagging certain methods as unavailable.
+
+Both these files can be added/committed in version control.
 
 ## Resolve *Validate method not found in Illuminate\Http\Request* flag
 
