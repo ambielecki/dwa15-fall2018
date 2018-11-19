@@ -88,11 +88,9 @@ You can run `SHOW DATABASES;` again to confirm the new database exists.
 ## 4. Create a new MySQL user
 Next, we'll create a new MySQL user that will be used to connect to your databases from your Laravel apps.
 
-While still in the MySQL command line we'll run the following command to create a new user. 
-
-Before running this command, note the following:
-1. The username is `dwa` (short for *Dynamic Web Applications* - we'll use this user for all your databases in this class, which is why we're not naming it specific to any one app).
-2. The password is `your-password-here` - change to a password of your choosing.
+While still in the MySQL command line we'll run the following command to create a new user. Before running this command, note the following:
+1. The username is `dwa` (short for *Dynamic Web Applications* - we'll use this user for all your databases in this course, which is why we're not naming it specific to any one app). 
+2. The password is `your-password-here`; can change this to a password of your choosing.
 
 ```
 CREATE USER 'dwa'@'localhost' IDENTIFIED BY 'your-password-here';
