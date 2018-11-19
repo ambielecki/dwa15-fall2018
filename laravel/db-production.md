@@ -8,8 +8,8 @@ Here is a summary of the steps we'll take (all on the production server) to get 
 2. Find your default MySQL password.
 3. Create a new database.
 4. Create a new MySQL user.
-4. Set up these credentials in your production `.env` file
-5. Run migrations (to build tables) and seeders (to fill tables).
+5. Set up these credentials in your production `.env` file
+6. Run migrations (to build tables) and seeders (to fill tables).
 
 
 
@@ -85,7 +85,7 @@ Query OK, 1 row affected (0.00 sec)
 You can run `SHOW DATABASES;` again to confirm the new database exists.
 
 
-## 5. Create a new MySQL user
+## 4. Create a new MySQL user
 Next, we'll create a new MySQL user that will be used to connect to your databases from your Laravel apps.
 
 While still in the MySQL command line we'll run the following command to create a new user. 
@@ -115,7 +115,7 @@ Finally, run `exit;` to get out of the MySQL command line tool.
 
 
 
-## 6. Set up these credentials in your production `.env` file
+## 5. Set up these credentials in your production `.env` file
 In order for your application to interact with this database, you have to update your production `.env` file with the correct database credentials.
 
 While SSHd into your DigitalOcean server, open your project's `.env` file in nano.
@@ -146,7 +146,7 @@ If you still have the [/debug route](https://github.com/susanBuck/dwa15-fall2017
 
 
 
-## 5. Run migrations (to build tables) and seeders (to fill tables)
+## 6. Run migrations (to build tables) and seeders (to fill tables)
 The final step is to run your migrations on your live server to build your tables, then run your seeders to fill these tables with some sample data.
 
 First, the migrations:
