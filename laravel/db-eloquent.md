@@ -284,6 +284,7 @@ Armed with this information, write queries to accomplish the following...
 + Retrieve all the books published after 1950.
 + Retrieve all the books in alphabetical order by title.
 + Retrieve all the books in descending order according to published date.
++ Find any books by the author “J.K. Rowling” and update the author name to be “JK Rowling”
 + Remove any/all books by the author &ldquo;J.K. Rowling&rdquo;.
 
 You should construct/test these queries in a PracticeController within your Foobooks practice application. I'll ask for your solutions to these tasks in your Week 11 assignment.
