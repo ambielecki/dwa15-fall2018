@@ -101,5 +101,7 @@ If you have a suggestion regarding a particular topic (correction, typo, etc.), 
     + [Query examples](/laravel/db-query-examples.md)
     + [Seeders](/laravel/db-seeders.md)
     + [Production database setup](/laravel/db-production.md)
+    + [Collections](/laravel/db-collections.md)
+    + [Foobooks Week 12 progress](laravel/foobooks-week12.md)
     + Extras
         + [Eloquent vs. Query Builder](laravel/db-eloquent-vs-qb.md)
