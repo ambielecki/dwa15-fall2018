@@ -199,6 +199,3 @@ But this is wasteful&mdash; the information you need already exists in the `$boo
 # Query existing Collection
 $newBooks = $books->sortByDesc('created_at')->take(3); 
 ```
-
-*[Discussed in lecture: Trade-off of putting *too* much responsibility on the Collection.]*
-

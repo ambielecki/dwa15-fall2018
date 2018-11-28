@@ -7,6 +7,7 @@ __This should not be considered a stand-alone document; for full details please 
 ## View all books
 - `BookController@index`
 - `/resources/views/books/index.blade.php`
+- `/resources/views/books/_book.blade.php`
 
 ## View individual book
 - `BookController@show`
@@ -25,10 +26,11 @@ $book->save();
 ```
 
 Redirect and [flash](https://laravel.com/docs/redirects#redirecting-with-flashed-session-data) a confirmation message which can be done via redirect's `with` method:
-```
+
+```php
 return redirect('/books/create')->with([
     'alert' => 'Your book was added.'
-    ]);
+]);
 ```
 
 Then in `master.blade.php` we display the alert:
