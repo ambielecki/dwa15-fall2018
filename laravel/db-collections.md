@@ -164,6 +164,8 @@ __Refer to the docs on [Collections: Available Methods](https://laravel.com/docs
 | `toArray()` | Get the collection of items as a plain array.
 | `toJson()` | Get the collection of items as JSON.
 | `count()` | Count the number of items in the collection. |
+| `take()` | Get new collection with the specified number of items. |
+
 
 Some of these method names may look familiar (e.g. `first`, `all`) because we saw them when learning about Eloquent query constraints.
 
