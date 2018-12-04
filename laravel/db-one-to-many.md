@@ -40,6 +40,7 @@ Example:
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-one-to-many@2x.png' style='max-width:644px; width:100%' alt='One To Many Relationship'>
 
 The database design necessary for this relationship looks like this:
+
 <img src='https://s3.amazonaws.com/making-the-internet/laravel-one-to-many-schema.png' style='max-width:297px;' alt=''>
 
 
@@ -311,7 +312,7 @@ $author = Author::where('first_name', '=', 'J.K.')->first();
 
 $book = new Book;
 $book->title = "Fantastic Beasts and Where to Find Them";
-$book->published = 2017;
+$book->published_year = 2017;
 $book->cover_url = 'http://prodimage.images-bn.com/pimages/9781338132311_p0_v2_s192x300.jpg';
 $book->purchase_url = 'http://www.barnesandnoble.com/w/fantastic-beasts-and-where-to-find-them-j-k-rowling/1004478855';
 $book->author()->associate($author); # <--- Associate the author with this book

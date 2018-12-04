@@ -8,50 +8,42 @@ __This should not be considered a stand-alone document; for full details please 
 ## Author dropdown
 To associate Authors with Books we'll use a dropdown filled with authors. I'll start by showing this in the *Add a book* feature, and later add it to the *Edit a book* feature.
 
-To make this happen, we first need an __array of authors__ where the key is the author `id` and the value is the author `name`.
-
 ```php
 # BookController.php
 public function create($id)
 {
-    # Get all the authors in alphabetical order by last name
-    $authors = Author::orderBy('last_name')->get();
-
-    # Organize the authors into an array where the key = author id and value = author name
-    $authorsForDropdown = [];
-    foreach ($authors as $author) {
-        $authorsForDropdown[$author->id] = $author->last_name.', '.$author->first_name;
-    }
+    # Get data for authors in alphabetical order by last name
+    $authors = Author::orderBy('last_name')->select(['id', 'first_name', 'last_name'])->get();
 
     return view('book.edit')->with([
-        'book' => $book,
-        'authorsForDropdown' => $authorsForDropdown # Make $authorsForDropdown available for the view
+        'authors' => $authors
     ]);
+}
 ```
 
 Construct the dropdown (`<select>`) in the view using this data:
-
 ```html
 <label for='author_id'>* Author</label>
-<select name='author_id' id='author_id'>
+<select name='author_id'>
     <option value=''>Choose one...</option>
-    @foreach($authorsForDropdown as $id => $authorName)
-        <option value='{{ $id }}' {{ ($book->author_id == $id) ? 'selected' : '' }}>{{ $authorName }}</option>
+    @foreach($authors as $author)
+        <option value='{{ $author->id }}' {{ (old('author_id') == $author->id) ? 'selected' : '' }}>{{ $author->first_name.' '.$author->last_name }}</option>
     @endforeach
 </select>
+@include('modules.field-error', ['field' => 'author_id'])
 ```
 
 Update the `BookController@store` method to also save the author details about the book.
 
 One way to do this:
 ```php
-$author = Author::find($request->input('author'));
+$author = Author::find($request->author_id);
 $book->author()->associate($author);
 ```
 
 Or, just manually specify the `author_id` since we already have it in the request. Saves us a trip to the database to fetch the Author object.
 ```php
-$book->author_id = $request->input('author');
+$book->author_id = $request->author_id;
 ```
 
 
@@ -62,25 +54,14 @@ Rather than duplicate the &ldquo;get authors for dropdown&rdquo; code, we can ex
 
 ```php
 # app/Author.php
-/**
- * Return an array of author id => author name
- */
-public static function getForDropdown()
-{
-    $authors = self::orderBy('last_name')->get();
-
-    $authorsForDropdown = [];
-    foreach ($authors as $author) {
-        $authorsForDropdown[$author->id] = $author->getFullName($reverse = true);
-    }
-
-    return $authorsForDropdown;
+public static function getForDropdown() {
+    return self::orderBy('last_name')->select(['id', 'first_name', 'last_name'])->get();
 }
 ```
 
-Then in `BookController@create`:
+Then in `BookController@edit`:
 ```
-$authorsForDropdown = Author::getForDropdown();
+$authors = Author::getForDropdown();
 ```
 
 
@@ -88,7 +69,7 @@ $authorsForDropdown = Author::getForDropdown();
 ```php
 $this->validate($request, [
     'title' => 'required|min:3',
-    'author_id' => 'required', # <----
+    'author_id' => 'required', # <---- Validate author dropdown
     'published' => 'required|min:4|numeric',
     'purchase_link' => 'required|url',
     'cover' => 'required|url',
