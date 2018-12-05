@@ -51,10 +51,10 @@ public function edit($id = null)
     }
 
     # Get authors
-    $authorsForDropdown = Author::getForDropdown();
+    $authors = Author::getForDropdown();
 
     # Get all the possible tags so we can include them with checkboxes in the view
-    $tagsForCheckboxes = Tag::getForCheckboxes();
+    $allTags = Tag::getForCheckboxes();
 
     # Get just the tag names for tags associated with this book;
     # will be used in the view to decide which tags should be checked off
@@ -63,8 +63,8 @@ public function edit($id = null)
     return view('book.edit')
         ->with([
             'book' => $book,
-            'authorsForDropdown' => $tagsForThisBook,
-            'tagsForCheckbox' => $tagsForCheckboxes,
+            'authors' => $authors,
+            'allTags' => $tagsForCheckboxes,
             'tags' => $tags,
         ]);
 }
@@ -77,7 +77,7 @@ Use this array of tags to construct the checkboxes in the view:
 # [...]
 
 <label>Tags</label>
-@foreach($tagsForCheckboxes as $tagId => $tagName)
+@foreach($tags as $tagId => $tagName)
     <ul class='tags'>
         <li>
             <label>
@@ -106,7 +106,7 @@ public function update(Request $request, $id)
     $book = Book::find($request->id);
 
     # Sync the tags
-    $book->tags()->sync($request->input('tags')); # <---
+    $book->tags()->sync($request->tags); # <---
 
      # Update other book data
     $book->title = $request->title;

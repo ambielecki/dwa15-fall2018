@@ -75,7 +75,7 @@ use App\Tag;
 
 public function run()
 {
-    $tags = ['novel', 'fiction', 'classic', 'wealth', 'women', 'autobiography', 'nonfiction'];
+    $tags = ['novel', 'fiction', 'classic', 'children', 'wealth', 'women', 'autobiography', 'nonfiction'];
 
     foreach ($tags as $tagName) {
         $tag = new Tag();
