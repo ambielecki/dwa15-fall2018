@@ -5,12 +5,10 @@ The following is a __rough outline__ of modifications I'll make to Foobooks duri
 __This should not be considered a stand-alone document; for full details please refer to the lecture video and the Foobooks code source.__
 
 
-## Using Tags/Many to Many
+## Tags in the *Edit Book* feature
 We have everything set up for a tags feature&mdash; migrations, seeders, models&mdash; now let's look at how we'd implement tags.
 
-We need a way to associate tags with books (either from the *Edit Book* or *Create Book* page)
-
-For authors, this was done with a dropdown which worked because each book can have only *one* author.
+Starting with the *Edit Book* feature, we need a way to associate tags with books. For authors, this was done with a dropdown which worked because each book can have only *one* author.
 
 Each book can have *many* tags, though, so a dropdown won't do. Instead, let's show all possible tags with checkboxes. Example of what we're aiming for:
 
@@ -106,7 +104,7 @@ public function update(Request $request, $id)
     $book = Book::find($request->id);
 
     # Sync the tags
-    $book->tags()->sync($request->tags); # <---
+    $book->tags()->sync($request->tags); # <--- NEW CODE
 
      # Update other book data
     $book->title = $request->title;
@@ -121,6 +119,12 @@ public function update(Request $request, $id)
     # [...finish removed for brevity..]
 }
 ```
+
+## Tags in the *Add a Book* feature
+See:  
++ [/resources/views/books/create/blade.php](https://github.com/susanBuck/foobooks/blob/master/resources/views/books/create.blade.php#L52)
++ [/app/Http/Controllers/BookController.php](https://github.com/susanBuck/foobooks/blob/master/app/Http/Controllers/BookController.php#L131)
+
 
 
 ## Revisiting the book delete feature
