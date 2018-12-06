@@ -88,42 +88,65 @@ public function books()
 
 ## Your Books
 Setup complete! Now let's make it so that when a user is logged in they only see *their* books.
-Update the `index` method in the BookController like so:
+
+To do this, update the first two lines of your index method as shown:
 
 ```php
 public function index(Request $request)
 {
-    $user = $request->user();
-
-    # Note: We're getting the user from the request, but you can also get it like this:
-    //$user = Auth::user();
-
-    # Approach 1)
-    //$books = Book::where('user_id', '=', $user->id)->orderBy('title')->get();
-
-    # Approach 2) Take advantage of Model relationships
-    $books = $user->books()->orderBy('title')->get();
-
-    # Query the existing Collection to get the last 3 books added
+    # ** NEW LINE ** Get the user object
+    $user = $request->user(); 
+  
+    # ** UPDATED LINE ** Edit the books query so it's fetching the books via the user object
+    $books = $user->books()->orderBy('title')->get(); 
+    
+    # Approach 1 - Query the database
+    # $newBooks = Book::latest()->limit(3)->get();
+    
+    # Approach 2 - Query the collection (more efficient)
     $newBooks = $books->sortByDesc('created_at')->take(3);
-
+    
     return view('books.index')->with([
-        'books' => $books,
-        'newBooks' => $newBooks,
+      'books' => $books,
+      'newBooks' => $newBooks
     ]);
 }
 ```
 
 
 ### View modifications
-In addition to the above changes, we also made the modifications to the book index view:
+In addition to the above changes, you should also make the following modifications to the book index view:
 
 + Update the heading on the book index from *All Books* to *Your Books*.
 + Only show the new books call-out if there are new books.
 + If there are no books to show, link to the page to add a new book.
 
-Study [/resources/book/index.blade.php](https://github.com/susanBuck/foobooks/blob/master/resources/views/book/index.blade.php) to see the details of these changes.
+```php
+@section('content')
+    @if($newBooks->count() > 0)
+        <section id='newBooks'>
+            <h2>Recently added books</h2>
+            <ul>
+                @foreach($newBooks as $book)
+                    <li>{{ $book->title }}</li>
+                @endforeach
+            </ul>
+        </section>
+    @endif
 
+    <section id='allBooks'>
+        <h2>Your books</h2>
+        @if($books->count() == 0)
+            <p>You don't have any books yet; would you like to <a href='/books/create'>add one?</a></p>
+        @else
+            @foreach($books as $book)
+                @include('books._book')
+            @endforeach
+        @endif
+    </section>
+@endsection
+```
+    
 ### Test it out
 + Login as Jill and you should see all the books (since they're all seeded to her)
 + Login as Jamal to see the &ldquo;blank slate&rdquo; page with no books to show.

@@ -28,9 +28,8 @@ You'll recall that our navigation links are defined in `/config/app.php`:
 ```php
 'nav' => [
     '/books' => 'Books',
-    '/books/create' => 'New Book',
+    '/books/create' => 'Add a book',
     '/books/search' => 'Search',
-    '/trivia' => 'Trivia',
     '/practice' => 'Practice',
     '/about' => 'About',
     '/contact' => 'Contact',
@@ -52,7 +51,6 @@ We're going to split this into two separate configs, one for when the visitor is
     '/books' => 'Books',
     '/books/create' => 'New Book',
     '/books/search' => 'Search',
-    '/trivia' => 'Trivia',
     '/practice' => 'Practice',
     '/about' => 'About',
     '/contact' => 'Contact',
@@ -92,11 +90,12 @@ Laravel ships with a default middleware file for authentication (`Illuminate\Aut
 
 To understand how this middleware is used, open `/app/Http/Kernel.php` and note that it's part of the `$routeMiddleWare` array with the key `auth`:
 ```php
-protected $routeMiddleware = [
-    'auth' => \App\Http\Middleware\Authenticate::class,
-    'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-    'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-    'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+protected $middleware = [
+    \App\Http\Middleware\CheckForMaintenanceMode::class,
+    \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+    \App\Http\Middleware\TrimStrings::class,
+    \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+    \App\Http\Middleware\TrustProxies::class,
 ];
 ```
 

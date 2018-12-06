@@ -42,13 +42,14 @@ If you open `database/migrations/2014_10_12_000000_create_users_table.php` you c
 public function up()
 {
     Schema::create('users', function (Blueprint $table) {
-        $table->increments('id');
-        $table->string('name');
-        $table->string('email')->unique();
-        $table->string('password');
-        $table->rememberToken();
-        $table->timestamps();
-    });
+       $table->increments('id');
+       $table->string('name');
+       $table->string('email')->unique();
+       $table->timestamp('email_verified_at')->nullable();
+       $table->string('password');
+       $table->rememberToken();
+       $table->timestamps();
+   });
 }
 ```
 
@@ -69,6 +70,7 @@ Next, open `/app/Http/Controllers/Auth/` and note the various existing controlle
 + `LoginController.php`
 + `RegisterController.php`
 + `ResetPasswordController.php`
++ `VerificationController.php`
 
 
 ## php artisan make:auth
@@ -76,38 +78,36 @@ Now that you've seen the existing auth-related files that Laravel ships with, th
 
 Below is an example output of `git status` after running this command, to highlight the changes it produces:
 ```xml
-/Applications/MAMP/htdocs/foobooks $ php artisan make:auth
+/Applications/MAMP/htdocs/foobooks (master)  $ php artisan make:auth
 Authentication scaffolding generated successfully.
-/Applications/MAMP/htdocs/foobooks $ git status
+/Applications/MAMP/htdocs/foobooks (master) ! $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-    modified:   routes/web.php
+	modified:   routes/web.php
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-    app/Http/Controllers/HomeController.php
-    resources/views/auth/
-    resources/views/home.blade.php
-    resources/views/layouts/app.blade.php
-
-no changes added to commit (use "git add" and/or "git commit -a")
+	app/Http/Controllers/HomeController.php
+	resources/views/auth/
+	resources/views/home.blade.php
+	resources/views/layouts/app.blade.php
 ```
 
 
 ## Routes
-One of the changes made by `make:auth` is it edits your routes file adding two lines  at the bottom.
+One of the changes made by `make:auth` is it edits your `routes/web.php` file adding two lines at the bottom.
 
 The first new line is this one:
 ```php
 Auth::routes();
 ```
 
-This single line sets up 10 different routes for your application, including:
+This single line adds 10 new routes for your application, including:
 
 + `/login` (GET & POST)
 + `/logout` (GET)
@@ -116,7 +116,7 @@ This single line sets up 10 different routes for your application, including:
 + `/password/reset/{token}` (GET)
 + `/register` (GET & POST)
 
-To see all these routes, run `php artisan route:list`. The following screenshot shows the relevant links highlighted:
+To see all these routes, run `php artisan route:list`. The following screenshot shows the relevant routes, marked by a green dot:
 
 <img src='http://making-the-internet.s3.amazonaws.com/laravel-auth-routes@2x.png' style='max-width:1180px;' alt=''>
 
@@ -132,6 +132,7 @@ To make this customization, you'll edit the following files:
 + `app/Http/Controllers/Auth/LoginController.php`
 + `app/Http/Controllers/Auth/RegisterController.php`
 + `app/Http/Controllers/Auth/ResetPasswordController.php`
++ `app/Http/Controllers/Auth/VerificationController.php`
 
 In these files, find this line:
 ```php
@@ -164,7 +165,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 ## Views
-When `php artisan make:auth` is invoked to create the auth routes, this command also created some new auth-related view files which you'll want to customize to match your application.
+When you invoked `php artisan make:auth` create the auth routes, this command also created some new auth-related view files which you'll want to customize to match your application.
 
 To begin, open `resources/views/auth/login.blade.php`&mdash; we want to adapt this view to match the patterns we've been using in our other views.
 
@@ -196,11 +197,11 @@ Note that the following essential pieces are kept in tact:
 
         <label for='email'>E-Mail Address</label>
         <input id='email' type='email' name='email' value='{{ old('email') }}' required autofocus>
-        @include('modules.error-field', ['field' => 'email'])
+        @include('modules.field-error', ['field' => 'email'])
 
         <label for='password'>Password</label>
         <input id='password' type='password' name='password' required>
-        @include('modules.error-field', ['field' => 'password'])
+        @include('modules.field-error', ['field' => 'password'])
 
         <label>
             <input type='checkbox' name='remember' {{ old('remember') ? 'checked' : '' }}> Remember Me
@@ -230,15 +231,15 @@ Similarly, we can amend `resources/views/auth/register.blade.php` to this:
 
         <label for='name'>Name</label>
         <input id='name' type='text' name='name' value='{{ old('name') }}' required autofocus>
-        @include('modules.error-field', ['field' => 'name'])
+        @include('modules.field-error', ['field' => 'name'])
 
         <label for='email'>E-Mail Address</label>
         <input id='email' type='email' name='email' value='{{ old('email') }}' required>
-        @include('modules.error-field', ['field' => 'email'])
+        @include('modules.field-error', ['field' => 'email'])
 
         <label for='password'>Password (min: 6)</label>
         <input id='password' type='password' name='password' required>
-        @include('modules.error-field', ['field' => 'password'])
+        @include('modules.field-error', ['field' => 'password'])
 
         <label for='password-confirm'>Confirm Password</label>
         <input id='password-confirm' type='password' name='password_confirmation' required>
