@@ -105,7 +105,6 @@ public function run()
     # Array of author data to add
     $authors = [
         ['F. Scott', 'Fitzgerald', 1896, 'https://en.wikipedia.org/wiki/F._Scott_Fitzgerald'],
-        ['bell', 'hooks', 1952, 'https://en.wikipedia.org/wiki/Bell_hooks'],
         ['Sylvia', 'Plath', 1932, 'https://en.wikipedia.org/wiki/Sylvia_Plath'],
         ['Maya', 'Angelou', 1928, 'https://en.wikipedia.org/wiki/Maya_Angelou'],
         ['J.K.', 'Rowling', 1965, 'https://en.wikipedia.org/wiki/J._K._Rowling']
